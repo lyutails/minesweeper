@@ -11,7 +11,11 @@ html {
 .minesweeper {
   &_body {
     width: 100%;
+    height: 100vh;
     background-color: green;
+    background-image: url('./refs/pics/jungle_light_001.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   &_wrapper {
@@ -19,12 +23,38 @@ html {
     margin: 0 auto;
   }
 
+  &_header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &_timer {
+    width: 20%;
+    background-color: aquamarine;
+  }
+
+  &_clicks_counter {
+    width: 20%;
+    background-color: aquamarine;
+  }
+
+  &_flags {
+    width: 20%;
+    background-color: aquamarine;
+  }
+
+  &_flags_available {
+    width: 20%;
+    background-color: aquamarine;
+  }
+
   &_field {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1 0 10%;
-    background-color: green;
     border: 5px solid salmon;
     margin-top: 20px;
   }
@@ -33,10 +63,15 @@ html {
     width: calc(100% * (1/10));
     aspect-ratio: 1 / 1;
     border: 1px solid goldenrod;
+    background-color: rgba(168, 221, 89, 0.8);
     display: inline-block;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
     text-align: center;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
