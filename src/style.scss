@@ -69,18 +69,8 @@ body::-webkit-scrollbar-thumb {
 
   &_timer {
     width: 20%;
-    background-color: rgb(59, 237, 121);
+    background-color: rgba(59, 237, 121, 0.85);
     font-family: "Rubik Beastly", cursive;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 10px;
-    border-radius: 10px;
-  }
-
-  &_clicks_counter {
-    width: 20%;
-    background-color: rgb(243, 243, 102);
-    font-family: "Rubik Moonrocks", cursive;
     font-size: 24px;
     text-align: center;
     padding-top: 10px;
@@ -89,7 +79,7 @@ body::-webkit-scrollbar-thumb {
 
   &_flags_holder {
     width: 20%;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.85);
     font-family: "Rubik Gemstones", cursive;
     font-size: 24px;
     text-align: center;
@@ -97,9 +87,19 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
   }
 
-  &_flags_available {
+  &_clicks_counter {
     width: 20%;
-    background-color: aquamarine;
+    background-color: rgba(243, 243, 102, 0.85);
+    font-family: "Rubik Moonrocks", cursive;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 10px;
+  }
+
+  &_mines {
+    width: 20%;
+    background-color: rgba(255, 144, 158, 0.85);
     font-family: "Rubik Microbe", cursive;
     font-size: 24px;
     text-align: center;
@@ -142,7 +142,7 @@ body::-webkit-scrollbar-thumb {
   &_size {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 127, 219);
+    background-color: rgba(255, 127, 219, 0.9);
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
 
@@ -156,9 +156,11 @@ body::-webkit-scrollbar-thumb {
     font-size: 24px;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       cursor: pointer;
+      color: cornsilk;
     }
   }
 
@@ -167,9 +169,11 @@ body::-webkit-scrollbar-thumb {
     font-size: 24px;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       cursor: pointer;
+      color: cornsilk;
     }
   }
 
@@ -177,20 +181,64 @@ body::-webkit-scrollbar-thumb {
     display: inline-block;
     font-size: 24px;
     font-family: "Rubik Glitch", cursive;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: cornsilk;
+    }
+  }
+
+  &_theme {
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Rubik Glitch", cursive;
+    border: 5px solid yellow;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.4);
+
+    &.active {
+      border: 5px solid purple;
+      background-color: rgba(128, 0, 128, 0.4);
+    }
+  }
+
+  &_day {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    background-image: url('./refs/icons/theme_day/cucumber.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(5px, 5px);
 
     &:hover {
       cursor: pointer;
     }
   }
 
-  &_theme {
+  &_night {
+    width: 50px;
+    aspect-ratio: 1 / 1;
     display: inline-block;
-    font-size: 24px;
-    font-family: "Rubik Glitch", cursive;
+    background-image: url('./refs/icons/theme_night/eggplant.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(-10px, 40px);
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &_theme_divider {
+    width: 100%;
+    height: 5px;
+    display: inline-block;
+    background: linear-gradient(270deg, yellow, purple);
+    transform: rotate(-45deg) translate(18px, -18px);
+    border-radius: 5px;
   }
 
   &_danger_sign {

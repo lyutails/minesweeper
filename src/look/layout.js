@@ -1,12 +1,12 @@
 import { createCells } from "../logic/cells";
+import { changeTheme } from "../logic/change_theme";
+import { createTheme } from "./theme";
+import { createBody } from "./body";
 
 export function createLayout() {
-  const minesweeperBody = document.body;
-  minesweeperBody.classList.add("minesweeper_body");
-
   const minesweeperWrapper = document.createElement("div");
   minesweeperWrapper.classList.add("minesweeper_wrapper");
-  minesweeperBody.append(minesweeperWrapper);
+  createBody().append(minesweeperWrapper);
 
   const minesweeperHeader = document.createElement("div");
   minesweeperHeader.classList.add("minesweeper_header");
@@ -22,15 +22,23 @@ export function createLayout() {
   minesweeperHeader.append(minesweeperFlagsHolder);
   minesweeperFlagsHolder.textContent = "flags";
 
-  const minesweeperFlagsAvailable = document.createElement("div");
+  const minesweeperFlagsPics = document.createElement('span');
+  minesweeperFlagsPics.classList.add('minesweeper_flags_pics');
+  minesweeperFlagsHolder.append(minesweeperFlagsPics);
+
+  const minesweeperFlagsAvailable = document.createElement("span");
   minesweeperFlagsAvailable.classList.add("minesweeper_flags_available");
-  minesweeperHeader.append(minesweeperFlagsAvailable);
-  minesweeperFlagsAvailable.textContent = "available";
+  minesweeperFlagsHolder.append(minesweeperFlagsAvailable);
 
   const minesweeperClicksCounter = document.createElement("div");
   minesweeperClicksCounter.classList.add("minesweeper_clicks_counter");
   minesweeperHeader.append(minesweeperClicksCounter);
   minesweeperClicksCounter.textContent = "clicks";
+
+  const minesweeperMines = document.createElement('div');
+  minesweeperMines.classList.add('minesweeper_mines');
+  minesweeperHeader.append(minesweeperMines);
+  minesweeperMines.textContent = 'mines';
 
   minesweeperWrapper.append(createCells());
 
@@ -70,8 +78,12 @@ export function createLayout() {
   minesweeperDangerTiger.classList.add("minesweeper_danger_tiger");
   minesweeperFooter.append(minesweeperDangerTiger);
 
-  const minesweeperTheme = document.createElement('div');
-  minesweeperTheme.classList.add('minesweeper_theme');
-  minesweeperFooter.append(minesweeperTheme);
-  minesweeperTheme.textContent = 'theme';
+  minesweeperFooter.append(createTheme());
+
+  changeTheme();
+
+  // new Promise((resolve, reject) => {
+  //   resolve(minesweeperFooter.append(createTheme()));
+  //   reject(new Error('no theme found'));
+  // }).then(changeTheme());
 }
