@@ -1,3 +1,5 @@
+import { changeTheme } from "../logic/change_theme";
+
 export function createTheme() {
   const minesweeperTheme = document.createElement("div");
   minesweeperTheme.classList.add("minesweeper_theme");
@@ -13,6 +15,8 @@ export function createTheme() {
   const minesweeperThemeDivider = document.createElement("span");
   minesweeperThemeDivider.classList.add("minesweeper_theme_divider");
   minesweeperTheme.append(minesweeperThemeDivider);
+
+  changeTheme(minesweeperNight, minesweeperDay, minesweeperTheme);
 
   return minesweeperTheme;
 }

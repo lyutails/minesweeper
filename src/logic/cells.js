@@ -1,3 +1,5 @@
+import { changeTheme } from "./change_theme";
+
 export function createCells() {
   const minesweeperField = document.createElement("div");
   minesweeperField.classList.add("minesweeper_field");

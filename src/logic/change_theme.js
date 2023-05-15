@@ -1,12 +1,18 @@
-export function changeTheme() {
+export function changeTheme(
+  minesweeperNight,
+  minesweeperDay,
+  minesweeperTheme
+) {
+  const body = document.querySelector(".minesweeper_body");
+
   minesweeperNight.addEventListener("click", (e) => {
     if (e.target.classList.contains("active")) {
       return e.target;
     } else {
       minesweeperTheme.classList.add("active");
-      minesweeperBody.style.background = url(
-        "./refs/pics/background/jungle_dark_001.jpg"
-      );
+      minesweeperNight.classList.add("active");
+      minesweeperDay.classList.add("active");
+      body.classList.add("active");
     }
   });
 
@@ -14,17 +20,8 @@ export function changeTheme() {
     if (minesweeperTheme.classList.contains("active")) {
       minesweeperTheme.classList.remove("active");
       minesweeperNight.classList.remove("active");
+      minesweeperDay.classList.remove("active");
+      body.classList.remove("active");
     }
   });
-
-  //   function checkDayNight() {
-  //     if (minesweeperNight.classList.contains("active")) {
-  //       minesweeperTheme.classList.add("active");
-  //     } else {
-  //       minesweeperTheme.classList.remove("active");
-  //     }
-  //   }
-  //   checkDayNight();
-
-  return changeTheme;
 }

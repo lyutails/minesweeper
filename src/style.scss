@@ -20,6 +20,12 @@
 // font-family: 'Rubik Microbe', cursive;
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
 // font-family: 'Rubik Glitch', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap");
+// font-family: 'Glass Antiqua', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap");
+// font-family: 'Passions Conflict', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+// font-family: 'Pacifico', cursive;
 
 :root {
   --scroll-color: linear-gradient(salmon, green);
@@ -28,8 +34,9 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Indie Flower", cursive;
+  font-family: "Shadows Into Light", cursive;
   height: 100%;
+  font-size: 16px;
 }
 
 body::-webkit-scrollbar {
@@ -53,10 +60,19 @@ body::-webkit-scrollbar-thumb {
     background: url("./refs/pics/background/jungle_light_001.jpg") no-repeat
       center center fixed;
     background-size: cover;
+
+    &.active {
+      width: 100%;
+      background: url("./refs/pics/background/jungle_dark_001.jpg") no-repeat
+        center center fixed;
+      background-size: cover;
+    }
   }
 
   &_wrapper {
     width: 50vw;
+    min-width: 360px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
@@ -71,40 +87,85 @@ body::-webkit-scrollbar-thumb {
     width: 20%;
     background-color: rgba(59, 237, 121, 0.85);
     font-family: "Rubik Beastly", cursive;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+  }
+
+  &_time {
+    font-size: 3rem;
   }
 
   &_flags_holder {
     width: 20%;
     background-color: rgba(127, 255, 212, 0.85);
     font-family: "Rubik Gemstones", cursive;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
   }
 
-  &_clicks_counter {
-    width: 20%;
-    background-color: rgba(243, 243, 102, 0.85);
-    font-family: "Rubik Moonrocks", cursive;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 10px;
-    border-radius: 10px;
+  &_flags_pics {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    background-image: url("./refs/icons/flags/apple.svg");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-top: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &_mines {
     width: 20%;
-    background-color: rgba(255, 144, 158, 0.85);
+    background-color: rgba(243, 243, 102, 0.85);
+    //background-color: rgba(255, 144, 158, 0.85);
     font-family: "Rubik Microbe", cursive;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+  }
+
+  &_mines_counter {
+    font-size: 3rem;
+  }
+
+  &_clicks {
+    width: 20%;
+    background-color: rgba(255, 144, 158, 0.85);
+    //background-color: rgba(243, 243, 102, 0.85);
+    font-family: "Rubik Moonrocks", cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+  }
+
+  &_clicks_counter {
+    font-size: 3rem;
   }
 
   &_field {
@@ -114,18 +175,24 @@ body::-webkit-scrollbar-thumb {
     flex: 1 0 10%;
     border: 5px solid salmon;
     margin-top: 20px;
+    background-color: rgba(168, 221, 89, 0.8);
+
+    .active {
+      background-color: rgba(89, 221, 170, 0.8);
+      // background-color: rgba(89, 142, 221, 0.8);
+    }
   }
 
   &_cell {
     width: calc(100% * (1 / 10));
     aspect-ratio: 1 / 1;
     border: 1px solid goldenrod;
-    background-color: rgba(168, 221, 89, 0.8);
     display: inline-block;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
     text-align: center;
+    font-size: 1.5rem;
 
     &:hover {
       cursor: pointer;
@@ -135,16 +202,19 @@ body::-webkit-scrollbar-thumb {
   &_footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
 
   &_size {
+    width: 15%;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 127, 219, 0.9);
-    padding: 5px 10px 5px 10px;
+    align-items: center;
+    background-color: rgba(255, 127, 219, 0.8);
+    padding: 10px 0px 10px 0px;
     border-radius: 10px;
+    user-select: none;
 
     &:hover {
       cursor: pointer;
@@ -153,10 +223,11 @@ body::-webkit-scrollbar-thumb {
 
   &_small {
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
+    user-select: none;
 
     &:hover {
       cursor: pointer;
@@ -166,10 +237,11 @@ body::-webkit-scrollbar-thumb {
 
   &_medium {
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
+    user-select: none;
 
     &:hover {
       cursor: pointer;
@@ -179,7 +251,7 @@ body::-webkit-scrollbar-thumb {
 
   &_large {
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-family: "Rubik Glitch", cursive;
     transition: all 0.2s ease-in-out;
 
@@ -190,6 +262,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_theme {
+    width: 20%;
     aspect-ratio: 1 / 1;
     display: inline-block;
     font-size: 24px;
@@ -205,13 +278,19 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_day {
-    width: 50px;
+    width: 45%;
     aspect-ratio: 1 / 1;
     display: inline-block;
-    background-image: url('./refs/icons/theme_day/cucumber.svg');
+    background-image: url("./refs/icons/theme_day/cucumber.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translate(5px, 5px);
+    resize: both;
+    transform: translate(10px, 12px);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.8));
+
+    &.active {
+      filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.8));
+    }
 
     &:hover {
       cursor: pointer;
@@ -219,13 +298,18 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_night {
-    width: 50px;
+    width: 45%;
     aspect-ratio: 1 / 1;
     display: inline-block;
-    background-image: url('./refs/icons/theme_night/eggplant.svg');
+    background-image: url("./refs/icons/theme_night/eggplant.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translate(-10px, 40px);
+    transform: translate(0px, 50px);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.8));
+
+    &.active {
+      filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.8));
+    }
 
     &:hover {
       cursor: pointer;
@@ -237,16 +321,17 @@ body::-webkit-scrollbar-thumb {
     height: 5px;
     display: inline-block;
     background: linear-gradient(270deg, yellow, purple);
-    transform: rotate(-45deg) translate(18px, -18px);
+    transform: rotate(-45deg) translate(12%, -200%);
     border-radius: 5px;
   }
 
   &_danger_sign {
-    width: 20vw;
-    aspect-ratio: 2 / 1.3;
+    width: 45%;
+    aspect-ratio: 1 / 0.6;
     background-image: url("./refs/pics/danger_sign.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
     resize: both;
     display: flex;
     justify-content: center;
@@ -254,17 +339,20 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_danger_text {
-    font-size: 36px;
+    font-size: 1.9rem;
     color: rgb(10, 63, 10);
     position: relative;
     z-index: 10;
     mix-blend-mode: multiply;
     opacity: 0.8;
     font-family: "Rubik Burned", cursive;
+    text-align: center;
+    transform: translateX(5px);
+    user-select: none;
   }
 
   &_danger_tiger {
-    width: 12vw;
+    width: 30%;
     aspect-ratio: 1 / 0.8;
     background-image: url("./refs/pics/small_tiger.png");
     background-repeat: no-repeat;
@@ -360,5 +448,236 @@ body::-webkit-scrollbar-thumb {
     100% {
       background-image: url("./refs/pics/small_tiger.png");
     }
+  }
+
+  &_instruction {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 2.2rem;
+    text-align: center;
+    color: rgb(249, 255, 67);
+    text-shadow: 0 0 10px rgb(3, 36, 3), 0 0 15px rgb(4, 53, 4),
+      0 0 20px rgb(9, 96, 9);
+    user-select: none;
+
+    &.active {
+      color: rgba(128, 0, 128);
+      text-shadow: 0 0 10px rgb(239, 255, 15), 0 0 15px rgb(255, 227, 19),
+        0 0 20px rgb(255, 200, 19);
+    }
+  }
+
+  &_author {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1.6rem;
+    color: rgba(255, 144, 158);
+    text-shadow: 0 0 10px rgb(3, 36, 3), 0 0 15px rgb(4, 53, 4),
+      0 0 20px rgb(9, 96, 9);
+    // text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(249, 255, 67);
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199.98px) {
+  html {
+    font-size: 14px;
+  }
+
+  .minesweeper {
+    &_theme_divider {
+      height: 4px;
+      transform: rotate(-45deg) translate(17%, -380%);
+    }
+
+    &_day {
+      width: 45%;
+      transform: translate(6px, 6px);
+    }
+
+    &_night {
+      width: 45%;
+      transform: translate(0px, 40px);
+    }
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 999.98px) {
+  html {
+    font-size: 13px;
+  }
+
+  .minesweeper {
+    &_theme_divider {
+      height: 4px;
+      transform: rotate(-45deg) translate(25%, -400%);
+    }
+
+    &_day {
+      width: 45%;
+      transform: translate(6px, 6px);
+    }
+
+    &_night {
+      width: 45%;
+      transform: translate(0px, 30px);
+    }
+  }
+}
+
+@media screen and (min-width: 728px) and (max-width: 799.98px) {
+  html {
+    font-size: 12px;
+  }
+
+  .minesweeper {
+    &_theme_divider {
+      height: 3px;
+      transform: rotate(-45deg) translate(25%, -450%);
+    }
+
+    &_theme {
+      border: 4px solid yellow;
+    }
+
+    &_day {
+      width: 45%;
+      transform: translate(6px, 6px);
+    }
+
+    &_night {
+      width: 45%;
+      transform: translate(0px, 30px);
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 727.98px) {
+  html {
+    font-size: 11px;
+  }
+
+  .minesweeper {
+    &_theme_divider {
+      height: 3px;
+      transform: rotate(-45deg) translate(28%, -450%);
+    }
+
+    &_theme {
+      border: 3px solid yellow;
+    }
+
+    &_day {
+      width: 45%;
+      transform: translate(5px, 5px);
+    }
+
+    &_night {
+      width: 45%;
+      transform: translate(0px, 28px);
+    }
+  }
+}
+
+.newgame {
+  &_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    min-width: 360px;
+    max-width: 680px;
+    height: 40vh;
+    background-color: aquamarine;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.4));
+    z-index: 100;
+
+    &.active {
+      display: none;
+    }
+  }
+
+  &_text {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    user-select: none;
+  }
+
+  &_mines {
+    width: 90%;
+    aspect-ratio: 1 / 0.56;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    column-gap: 0.2vw;
+  }
+
+  &_circle {
+    width: 6%;
+    aspect-ratio: 1 / 1;
+    background-color: bisque;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-family: "Pacifico", cursive;
+    border: 1px solid rgba(128, 0, 128, 0.8);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.8));
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(128, 0, 128);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999.98px) {
+  .newgame {
+    &_modal {
+      height: 30vh;
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767.98px) {
+  .newgame {
+    &_modal {
+      height: 20vh;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+
+  &.active {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
