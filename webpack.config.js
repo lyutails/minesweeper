@@ -23,7 +23,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
-            favicon: './src/refs/favicons/minesweeper_favicon_01.png',
+            favicon: './src/refs/favicons/favicon_01.svg',
         }),
 
         // Add your plugins here

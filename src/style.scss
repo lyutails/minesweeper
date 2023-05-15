@@ -124,6 +124,7 @@ body::-webkit-scrollbar-thumb {
     background-repeat: no-repeat;
     display: inline-block;
     margin-top: 5px;
+    margin-bottom: 5px;
 
     &:hover {
       cursor: pointer;
@@ -692,6 +693,7 @@ body::-webkit-scrollbar-thumb {
     &:hover {
       cursor: pointer;
       border: 2px solid rgb(163, 255, 24);
+      transform: rotate(45deg);
     }
 
     &:hover > .popup_crossline:first-child {

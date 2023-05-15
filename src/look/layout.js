@@ -3,8 +3,8 @@ import { createTheme } from "./theme";
 import { createBody } from "./body";
 import { newGame } from "./new_game";
 import { createOverlay } from "./overlay";
-import { removePopup } from "../logic/remove_popup";
-import { createCross } from "./popup_cross";
+import { fieldSize } from "../logic/field_size";
+import { pickSize } from "./size";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -60,29 +60,12 @@ export function createLayout() {
   minesweeperFooter.classList.add("minesweeper_footer");
   minesweeperWrapper.append(minesweeperFooter);
 
-  const minesweeperSize = document.createElement("div");
-  minesweeperSize.classList.add("minesweeper_size");
-  minesweeperFooter.append(minesweeperSize);
+  minesweeperFooter.append(pickSize());
 
-  const minesweeperSmall = document.createElement("span");
-  minesweeperSmall.classList.add("minesweeper_small");
-  minesweeperSize.append(minesweeperSmall);
-  minesweeperSmall.textContent = "10x10";
-
-  minesweeperSmall.addEventListener("click", () => {
-    createBody().insertAdjacentElement("afterbegin", newGame());
-    createBody().insertAdjacentElement("afterbegin", createOverlay());
-  });
-
-  const minesweeperMedium = document.createElement("span");
-  minesweeperMedium.classList.add("minesweeper_medium");
-  minesweeperSize.append(minesweeperMedium);
-  minesweeperMedium.textContent = "15x15";
-
-  const minesweeperLarge = document.createElement("span");
-  minesweeperLarge.classList.add("minesweeper_large");
-  minesweeperSize.append(minesweeperLarge);
-  minesweeperLarge.textContent = "20x20";
+  // minesweeperSmall.addEventListener("click", () => {
+  //   createBody().insertAdjacentElement("afterbegin", newGame());
+  //   createBody().insertAdjacentElement("afterbegin", createOverlay());
+  // });
 
   const minesweeperDangerSign = document.createElement("div");
   minesweeperDangerSign.classList.add("minesweeper_danger_sign");
