@@ -1,4 +1,4 @@
-import { createOverlay } from "../look/overlay";
+import { removePopup } from "../logic/remove_popup";
 
 export function newGame() {
   const newgameModal = document.createElement("div");
@@ -23,7 +23,7 @@ export function newGame() {
     newgameMines.append(newgameCircle);
   }
 
-  createOverlay(newgameModal);
+  // removePopup(newgameModal);
 
   return newgameModal;
 }

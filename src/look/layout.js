@@ -1,8 +1,9 @@
 import { createCells } from "../logic/cells";
 import { createTheme } from "./theme";
 import { createBody } from "./body";
-import { newGame } from "../logic/new_game";
+import { newGame } from "./new_game";
 import { createOverlay } from "./overlay";
+import { removePopup } from "../logic/remove_popup";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
