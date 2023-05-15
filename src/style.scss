@@ -506,6 +506,10 @@ body::-webkit-scrollbar-thumb {
       width: 45%;
       transform: translate(0px, 40px);
     }
+
+    &_header {
+      height: 9vh;
+    }
   }
 }
 
@@ -528,6 +532,10 @@ body::-webkit-scrollbar-thumb {
     &_night {
       width: 45%;
       transform: translate(0px, 30px);
+    }
+
+    &_header {
+      height: 9vh;
     }
   }
 }
@@ -556,6 +564,10 @@ body::-webkit-scrollbar-thumb {
       width: 45%;
       transform: translate(0px, 30px);
     }
+
+    &_header {
+      height: 9vh;
+    }
   }
 }
 
@@ -583,6 +595,10 @@ body::-webkit-scrollbar-thumb {
       width: 45%;
       transform: translate(0px, 28px);
     }
+
+    &_header {
+      height: 8vh;
+    }
   }
 }
 
@@ -592,10 +608,10 @@ body::-webkit-scrollbar-thumb {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    min-width: 360px;
-    max-width: 680px;
-    height: 40vh;
+    width: 40vw;
+    min-width: 320px;
+    max-width: 630px;
+    aspect-ratio: 1 / 0.8;
     background-color: aquamarine;
     border-radius: 20px;
     display: flex;
@@ -616,7 +632,7 @@ body::-webkit-scrollbar-thumb {
 
   &_mines {
     width: 90%;
-    aspect-ratio: 1 / 0.56;
+    aspect-ratio: 1 / 0.8;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -646,22 +662,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 999.98px) {
-  .newgame {
-    &_modal {
-      height: 30vh;
-    }
-  }
-}
-
-@media screen and (min-width: 360px) and (max-width: 767.98px) {
-  .newgame {
-    &_modal {
-      height: 20vh;
-    }
-  }
-}
-
 .overlay {
   position: fixed;
   width: 100%;
@@ -671,5 +671,63 @@ body::-webkit-scrollbar-thumb {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+.popup {
+  &_cross {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -30px;
+    top: -30px;
+    border: 2px solid rgb(239, 255, 15);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      border: 2px solid rgb(163, 255, 24);
+    }
+
+    &:hover > .popup_crossline:first-child {
+      background-color: rgb(213, 0, 60);
+    }
+
+    &:hover > .popup_crossline:last-child {
+      background-color: rgb(213, 0, 60);
+    }
+  }
+
+  &_crossline {
+    width: 80%;
+    height: 4px;
+    position: absolute;
+    display: inline-block;
+    background-color: aqua;
+    transition: all 0.4s ease-in-out;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767.98px) {
+  .popup {
+    &_cross {
+      width: 30px;
+      height: 30px;
+      right: -20px;
+      top: -20px;
+    }
   }
 }

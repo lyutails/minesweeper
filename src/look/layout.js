@@ -4,6 +4,7 @@ import { createBody } from "./body";
 import { newGame } from "./new_game";
 import { createOverlay } from "./overlay";
 import { removePopup } from "../logic/remove_popup";
+import { createCross } from "./popup_cross";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");

@@ -1,4 +1,5 @@
 import { removePopup } from "../logic/remove_popup";
+import { createCross } from "./popup_cross";
 
 export function newGame() {
   const newgameModal = document.createElement("div");
@@ -24,6 +25,7 @@ export function newGame() {
   }
 
   // removePopup(newgameModal);
+  createCross(newgameModal);
 
   return newgameModal;
 }
