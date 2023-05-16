@@ -6,11 +6,16 @@ export function createCells() {
 
   const minesweeperCellsNumber = 100;
   let cellsArray = new Array();
+  let cellsCoverArray = [];
   for (let i = 0; i < minesweeperCellsNumber; i++) {
     const minesweeperCell = document.createElement("span");
     minesweeperCell.classList.add("minesweeper_cell");
     minesweeperField.append(minesweeperCell);
     cellsArray.push(minesweeperCell);
+    const minesweeperCellCover = document.createElement("span");
+    minesweeperCellCover.classList.add("minesweeper_cell_cover");
+    cellsArray[i].append(minesweeperCellCover);
+    cellsCoverArray.push(minesweeperCellCover);
   }
 
   return minesweeperField;
