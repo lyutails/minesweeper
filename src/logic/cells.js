@@ -1,4 +1,5 @@
 import { changeTheme } from "./change_theme";
+import { placeDefaultMines } from "./place_default_mines";
 
 export function createCells() {
   const minesweeperField = document.createElement("div");
@@ -17,6 +18,14 @@ export function createCells() {
     cellsArray[i].append(minesweeperCellCover);
     cellsCoverArray.push(minesweeperCellCover);
   }
+
+  cellsCoverArray.forEach(element => {
+    element.addEventListener('click', () => {
+      element.style.backgroundColor = 'transparent';
+    })
+  })
+
+  placeDefaultMines(cellsCoverArray);
 
   return minesweeperField;
 }

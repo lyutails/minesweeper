@@ -1,137 +1,93 @@
+import alienShip from "../refs/icons/mines/alien-ship.svg";
+import ant from "../refs/icons/mines/ant.svg";
+import beaver from "../refs/icons/mines/beaver.svg";
+import bee from "../refs/icons/mines/bee.svg";
+import beetle from "../refs/icons/mines/beetle.svg";
+import bird from "../refs/icons/mines/bird.svg";
+import blackCat from "../refs/icons/mines/black-cat.svg";
+import cactus from "../refs/icons/mines/cactus.svg";
+import chipmunk from "../refs/icons/mines/chipmunk.svg";
+import crab from "../refs/icons/mines/crab.svg";
+import crocodile from "../refs/icons/mines/crocodile.svg";
+import dragon from "../refs/icons/mines/dragon.svg";
+import duck from "../refs/icons/mines/duck.svg";
+import elephant from "../refs/icons/mines/elephant.svg";
+import ewe from "../refs/icons/mines/ewe.svg";
+import flamingo from "../refs/icons/mines/flamingo.svg";
+import fly from "../refs/icons/mines/fly.svg";
+import hedgehog from "../refs/icons/mines/hedgehog.svg";
+import hippopotamus from "../refs/icons/mines/hippopotamus.svg";
+import ladyBeetle from "../refs/icons/mines/lady-beetle.svg";
+import leopard from "../refs/icons/mines/leopard.svg";
+import lizard from "../refs/icons/mines/lizard.svg";
+import mammoth from "../refs/icons/mines/mammoth.svg";
+import microbe from "../refs/icons/mines/microbe.svg";
+import monkey from "../refs/icons/mines/monkey.svg";
+import mosquito from "../refs/icons/mines/mosquito.svg";
+import octopus from "../refs/icons/mines/octopus.svg";
+import owl from "../refs/icons/mines/owl.svg";
+import parrot from "../refs/icons/mines/parrot.svg";
+import pawPrints from "../refs/icons/mines/paw-prints.svg";
+import penguin from "../refs/icons/mines/penguin.svg";
+import pig from "../refs/icons/mines/pig.svg";
+import rabbit from "../refs/icons/mines/rabbit.svg";
+import rat from "../refs/icons/mines/rat.svg";
+import sauropod from "../refs/icons/mines/sauropod.svg";
+import scorpion from "../refs/icons/mines/scorpion.svg";
+import seal from "../refs/icons/mines/seal.svg";
+import snail from"../refs/icons/mines/snail.svg";
+import snake from "../refs/icons/mines/snake.svg";
+import spider from "../refs/icons/mines/spider.svg";
+import tRex from "../refs/icons/mines/t-rex.svg";
+import tiger from "../refs/icons/mines/tiger.svg";
+import turtle from "../refs/icons/mines/turtle.svg";
+import volcano from "../refs/icons/mines/volcano.svg";
+import worm from "../refs/icons/mines/worm.svg";
+
 export const minesData = [
-    {
-        pic: '../refs/icons/alien-ship.svg'
-    },
-    {
-        pic: '../refs/icons/ant.svg'
-    },
-    {
-        pic: '../refs/icons/beaver.svg'
-    },
-    {
-        pic: '../refs/icons/bee.svg'
-    },
-    {
-        pic: '../refs/icons/beetle.svg'
-    },
-    {
-        pic: '../refs/icons/bird.svg'
-    },
-    {
-        pic: '../refs/icons/black-cat.svg'
-    },
-    {
-        pic: '../refs/icons/cactus.svg'
-    },
-    {
-        pic: '../refs/icons/chipmunk.svg'
-    },
-    {
-        pic: '../refs/icons/crab.svg'
-    },
-    {
-        pic: '../refs/icons/crocodile.svg'
-    },
-    {
-        pic: '../refs/icons/dragon.svg'
-    },
-    {
-        pic: '../refs/icons/duck.svg'
-    },
-    {
-        pic: '../refs/icons/elephant.svg'
-    },
-    {
-        pic: '../refs/icons/ewe.svg'
-    },
-    {
-        pic: '../refs/icons/flamingo.svg'
-    },
-    {
-        pic: '../refs/icons/fly.svg'
-    },
-    {
-        pic: '../refs/icons/hedgehog.svg'
-    },
-    {
-        pic: '../refs/icons/hippopotamus.svg'
-    },
-    {
-        pic: '../refs/icons/lady-beetle.svg'
-    },
-    {
-        pic: '../refs/icons/leopard.svg'
-    },
-    {
-        pic: '../refs/icons/lizard.svg'
-    },
-    {
-        pic: '../refs/icons/mammoth.svg'
-    },
-    {
-        pic: '../refs/icons/microbe.svg'
-    },
-    {
-        pic: '../refs/icons/monkey.svg'
-    },
-    {
-        pic: '../refs/icons/mosquito.svg'
-    },
-    {
-        pic: '../refs/icons/octopus.svg'
-    },
-    {
-        pic: '../refs/icons/owl.svg'
-    },
-    {
-        pic: '../refs/icons/parrot.svg'
-    },
-    {
-        pic: '../refs/icons/paw-prints.svg'
-    },
-    {
-        pic: '../refs/icons/penguin.svg'
-    },
-    {
-        pic: '../refs/icons/pig.svg'
-    },
-    {
-        pic: '../refs/icons/rabbit.svg'
-    },
-    {
-        pic: '../refs/icons/rat.svg'
-    },
-    {
-        pic: '../refs/icons/sauropod.svg'
-    },
-    {
-        pic: '../refs/icons/scorpion.svg'
-    },
-    {
-        pic: '../refs/icons/seal.svg'
-    },
-    {
-        pic: '../refs/icons/snail.svg'
-    },
-    {
-        pic: '../refs/icons/snake.svg'
-    },
-    {
-        pic: '../refs/icons/spider.svg'
-    },
-    {
-        pic: '../refs/icons/t-rex.svg'
-    },
-    {
-        pic: '../refs/icons/tiger.svg'
-    },
-    {
-        pic: '../refs/icons/turtle.svg'
-    },
-    {
-        pic: '../refs/icons/volcano.svg'
-    },
-    {
-        pic: '../refs/icons/worm.svg'
-    },
-]
+  alienShip,
+  ant,
+  beaver,
+  bee,
+  beetle,
+  bird,
+  blackCat,
+  cactus,
+  chipmunk,
+  crab,
+  crocodile,
+  dragon,
+  duck,
+  elephant,
+  ewe,
+  flamingo,
+  fly,
+  hedgehog,
+  hippopotamus,
+  ladyBeetle,
+  leopard,
+  lizard,
+  mammoth,
+  microbe,
+  monkey,
+  mosquito,
+  octopus,
+  owl,
+  parrot,
+  pawPrints,
+  penguin,
+  pig,
+  rabbit,
+  rat,
+  sauropod,
+  scorpion,
+  seal,
+  snail,
+  snake,
+  spider,
+  tRex,
+  tiger,
+  turtle,
+  volcano,
+  worm,
+];

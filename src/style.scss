@@ -747,3 +747,17 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+
+.new_mine {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: red;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
