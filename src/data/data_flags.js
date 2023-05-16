@@ -6,6 +6,12 @@ export const flagsData = [
         pic: '../refs/icons/blueberries.svg'
     },
     {
+        pic: '../refs/icons/beet.svg'
+    },
+    {
+        pic: '../refs/icons/cabbage.svg'
+    },
+    {
         pic: '../refs/icons/cherry.svg'
     },
     {
@@ -16,6 +22,15 @@ export const flagsData = [
     },
     {
         pic: '../refs/icons/grapes.svg'
+    },
+    {
+        pic: '../refs/icons/hops.svg'
+    },
+    {
+        pic: '../refs/icons/kiwi.svg'
+    },
+    {
+        pic: '../refs/icons/kohlrabi.svg'
     },
     {
         pic: '../refs/icons/macaron.svg'
@@ -30,6 +45,9 @@ export const flagsData = [
         pic: '../refs/icons/raspberry.svg'
     },
     {
+        pic: '../refs/icons/plum.svg'
+    },
+    {
         pic: '../refs/icons/strawberry.svg'
     },
     {
@@ -37,8 +55,5 @@ export const flagsData = [
     },
     {
         pic: '../refs/icons/tomato.svg'
-    },
-    {
-        pic: '../refs/icons/watermelon.svg'
     },
 ]
