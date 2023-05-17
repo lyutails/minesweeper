@@ -47,7 +47,7 @@ export function createTheme() {
     });
   }
 
-  changeTheme(minesweeperNight, minesweeperDay, minesweeperTheme);
+  changeTheme(minesweeperNight, minesweeperDay, minesweeperTheme, themeCircles);
 
   return minesweeperThemeWrapper;
 }
