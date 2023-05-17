@@ -1,4 +1,3 @@
-import { removePopup } from "../logic/remove_popup";
 import { createCross } from "./popup_cross";
 
 export function newGame() {

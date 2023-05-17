@@ -2,11 +2,6 @@ import { newGame } from "../look/new_game";
 import { createOverlay } from "../look/overlay";
 
 export function fieldSize(sizeArray) {
-  console.log(sizeArray);
-  sizeArray.forEach((element) => {
-    element.addEventListener("click", () => {});
-  });
-
   const body = document.querySelector(".minesweeper_body");
 
   sizeArray.forEach((element) => {

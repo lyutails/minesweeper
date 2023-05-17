@@ -5,7 +5,11 @@ export function removePopup(overlay) {
     return overlay.addEventListener("click", () => {
       overlay.remove();
       // newgameModal.remove();
-      modal.remove();
+      if (modal) {
+        modal.remove();
+      } if (document.querySelector(".lose_modal_body")) {
+        document.querySelector(".lose_modal_body").remove();
+      }
     });
   }
   closePopup();

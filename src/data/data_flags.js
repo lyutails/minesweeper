@@ -1,80 +1,103 @@
+import apple from '../refs/icons/flags/apple.svg';
+import beer from '../refs/icons/flags/beer.svg';
+import beet from '../refs/icons/flags/beet.svg';
+import cabbage from '../refs/icons/flags/cabbage.svg';
+import cheese from '../refs/icons/flags/cheese.svg';
+import cherry from '../refs/icons/flags/cherry.svg';
+import corn from '../refs/icons/flags/corn.svg';
+import cupcake from '../refs/icons/flags/cupcake.svg';
+import hamburger from  '../refs/icons/flags/hamburger.svg';
+import hops from '../refs/icons/flags/hops.svg';
+import kiwi from '../refs/icons/flags/kiwi.svg';
+import kohlrabi from '../refs/icons/flags/kohlrabi.svg';
+import macaron from '../refs/icons/flags/macaron.svg';
+import mango from '../refs/icons/flags/mango.svg';
+import pancake from '../refs/icons/flags/pancake.svg';
+import peach from '../refs/icons/flags/peach.svg';
+import pear from '../refs/icons/flags/pear.svg';
+import pie from '../refs/icons/flags/pie.svg';
+import pizza from '../refs/icons/flags/pizza.svg';
+import pretzel from '../refs/icons/flags/pretzel.svg';
+import raspberry from '../refs/icons/flags/raspberry.svg';
+import plum from '../refs/icons/flags/plum.svg';
+import strawberry from '../refs/icons/flags/strawberry.svg';
+import teapot from '../refs/icons/flags/teapot.svg';
+import tomato from '../refs/icons/flags/tomato.svg';
+
 export const flagsData = [
     {
-        pic: '../refs/icons/apple.svg'
+        pic: apple
     },
     {
-        pic: '../refs/icons/beer.svg'
+        pic: beer
     },
     {
-        pic: '../refs/icons/beet.svg'
+        pic: beet
     },
     {
-        pic: '../refs/icons/cabbage.svg'
+        pic: cabbage
     },
     {
-        pic: '../refs/icons/cheese.svg'
+        pic: cheese
     },
     {
-        pic: '../refs/icons/cherry.svg'
+        pic: cherry
     },
     {
-        pic: '../refs/icons/corn.svg'
+        pic: corn
     },
     {
-        pic: '../refs/icons/cupcake.svg'
+        pic: cupcake
     },
     {
-        pic: '../refs/icons/grapes.svg'
+        pic: hamburger
     },
     {
-        pic: '../refs/icons/hamburger.svg'
+        pic: hops
     },
     {
-        pic: '../refs/icons/hops.svg'
+        pic: kiwi
     },
     {
-        pic: '../refs/icons/kiwi.svg'
+        pic: kohlrabi
     },
     {
-        pic: '../refs/icons/kohlrabi.svg'
+        pic: macaron
     },
     {
-        pic: '../refs/icons/macaron.svg'
+        pic: mango
     },
     {
-        pic: '../refs/icons/mango.svg'
+        pic: pancake
     },
     {
-        pic: '../refs/icons/pancake.svg'
+        pic: peach
     },
     {
-        pic: '../refs/icons/peach.svg'
+        pic: pear
     },
     {
-        pic: '../refs/icons/pear.svg'
+        pic: pie
     },
     {
-        pic: '../refs/icons/pie.svg'
+        pic: pizza
     },
     {
-        pic: '../refs/icons/pizza.svg'
+        pic: pretzel
     },
     {
-        pic: '../refs/icons/pretzel.svg'
+        pic: raspberry
     },
     {
-        pic: '../refs/icons/raspberry.svg'
+        pic: plum
     },
     {
-        pic: '../refs/icons/plum.svg'
+        pic: strawberry
     },
     {
-        pic: '../refs/icons/strawberry.svg'
+        pic: teapot
     },
     {
-        pic: '../refs/icons/teapot.svg'
-    },
-    {
-        pic: '../refs/icons/tomato.svg'
+        pic: tomato
     },
 ]

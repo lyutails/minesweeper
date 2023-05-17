@@ -3,8 +3,9 @@ import { createTheme } from "./theme";
 import { createBody } from "./body";
 import { fieldSize } from "../logic/field_size";
 import { pickSize } from "./size";
+import { createFlags } from "./flags";
 
-export function createLayout(minesweeperSmall) {
+export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
   minesweeperWrapper.classList.add("minesweeper_wrapper");
   createBody().append(minesweeperWrapper);
@@ -23,14 +24,7 @@ export function createLayout(minesweeperSmall) {
   minesweeperTimer.append(minesweeperTime);
   minesweeperTime.textContent = "0";
 
-  const minesweeperFlagsHolder = document.createElement("div");
-  minesweeperFlagsHolder.classList.add("minesweeper_flags_holder");
-  minesweeperHeader.append(minesweeperFlagsHolder);
-  minesweeperFlagsHolder.textContent = "flags";
-
-  const minesweeperFlagsPics = document.createElement("span");
-  minesweeperFlagsPics.classList.add("minesweeper_flags_pics");
-  minesweeperFlagsHolder.append(minesweeperFlagsPics);
+  minesweeperHeader.append(createFlags());
 
   const minesweeperMines = document.createElement("div");
   minesweeperMines.classList.add("minesweeper_mines");

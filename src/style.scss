@@ -102,6 +102,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_flags_holder {
+    position: relative;
     width: 20%;
     background-color: rgba(127, 255, 212, 0.85);
     font-family: "Rubik Gemstones", cursive;
@@ -115,16 +116,16 @@ body::-webkit-scrollbar-thumb {
     user-select: none;
   }
 
-  &_flags_pics {
-    width: 50%;
+  &_flag_pic {
+    width: 40%;
     aspect-ratio: 1 / 1;
-    background-image: url("./refs/icons/flags/apple.svg");
+    // background-image: url("./refs/icons/flags/apple.svg");
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    display: inline-block;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    display: block;
+    margin-top: 30px;
+    position: absolute;
 
     &:hover {
       cursor: pointer;
@@ -578,6 +579,12 @@ body::-webkit-scrollbar-thumb {
     &_header {
       height: 9vh;
     }
+
+    &_flag_pic {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      margin-top: 25px;
+    }
   }
 }
 
@@ -609,6 +616,12 @@ body::-webkit-scrollbar-thumb {
     &_header {
       height: 9vh;
     }
+
+    &_flag_pic {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      margin-top: 25px;
+    }
   }
 }
 
@@ -639,6 +652,12 @@ body::-webkit-scrollbar-thumb {
 
     &_header {
       height: 8vh;
+    }
+
+    &_flag_pic {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      margin-top: 25px;
     }
   }
 }
@@ -787,4 +806,25 @@ body::-webkit-scrollbar-thumb {
   &:hover {
     cursor: pointer;
   }
+}
+
+.lose_modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  min-width: 320px;
+  max-width: 480px;
+  aspect-ratio: 1 / 0.6;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  border-radius: 20px;
+  white-space: pre-line;
+  z-index: 150;
+  user-select: none;
 }
