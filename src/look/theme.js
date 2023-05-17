@@ -25,8 +25,8 @@ export function createTheme() {
   themeCirclesWrapper.classList.add("minesweeper_circles_wrapper");
   minesweeperThemeWrapper.append(themeCirclesWrapper);
 
-  let themesNumber = 6;
-  let themeChangerColors = [];
+  let themesNumber = 7;
+  let themeChangerColors = ['#eb122b', '#eb6e12', '#ebd412', '#12eb63', '#12ebd9', '#1278eb', '#9c12eb'];
   let themeCircles = [];
 
   for (let i = 0; i < themesNumber; i++) {
@@ -36,19 +36,16 @@ export function createTheme() {
     themeCircles.push(themeCircle);
   }
 
+  themeCircles.forEach((element, i) => {
+    element.style.backgroundColor = themeChangerColors[i];
+  })
+
   for (let i = 0; i < themeCircles.length; i++) {
     themeCircles[i].addEventListener("click", () => {
       minesweeperDay.style.backgroundImage = `url(${themeData[i].day})`;
       minesweeperNight.style.backgroundImage = `url(${themeData[i].night})`;
     });
   }
-
-  // themeCircles.forEach((element) => {
-  //   element.addEventListener("click", () => {
-  //     minesweeperDay.style.backgroundImage = `url(${themeData.filter(elem => elem.day)})`;
-  //     minesweeperNight.style.backgroundImage = `url(${themeData.filter(elem => elem.night)})`;
-  //   });
-  // });
 
   changeTheme(minesweeperNight, minesweeperDay, minesweeperTheme);
 
