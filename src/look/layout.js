@@ -1,12 +1,10 @@
 import { createCells } from "../logic/cells";
 import { createTheme } from "./theme";
 import { createBody } from "./body";
-import { newGame } from "./new_game";
-import { createOverlay } from "./overlay";
 import { fieldSize } from "../logic/field_size";
 import { pickSize } from "./size";
 
-export function createLayout() {
+export function createLayout(minesweeperSmall) {
   const minesweeperWrapper = document.createElement("div");
   minesweeperWrapper.classList.add("minesweeper_wrapper");
   createBody().append(minesweeperWrapper);
@@ -61,11 +59,6 @@ export function createLayout() {
   minesweeperWrapper.append(minesweeperFooter);
 
   minesweeperFooter.append(pickSize());
-
-  // minesweeperSmall.addEventListener("click", () => {
-  //   createBody().insertAdjacentElement("afterbegin", newGame());
-  //   createBody().insertAdjacentElement("afterbegin", createOverlay());
-  // });
 
   const minesweeperDangerSign = document.createElement("div");
   minesweeperDangerSign.classList.add("minesweeper_danger_sign");

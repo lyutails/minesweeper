@@ -19,9 +19,9 @@ export function pickSize() {
   minesweeperSize.append(minesweeperLarge);
   minesweeperLarge.textContent = "20x20";
 
-//   let sizeArray = [minesweeperSmall, minesweeperMedium, minesweeperLarge];
+  let sizeArray = [minesweeperSmall, minesweeperMedium, minesweeperLarge];
 
-//   fieldSize(sizeArray);
+  fieldSize(sizeArray);
 
   return minesweeperSize;
 }
