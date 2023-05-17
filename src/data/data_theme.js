@@ -10,6 +10,8 @@ import pineapple from "../refs/icons/theme_day/pineapple.svg";
 import grapes from "../refs/icons/theme_night/grapes.svg";
 import cookies from "../refs/icons/theme_day/cookies.svg";
 import blueberries from "../refs/icons/theme_night/blueberries.svg";
+import sushi from "../refs/icons/theme_day/sushi.svg";
+import cocktail from "../refs/icons/theme_night/cocktail.svg";
 
 export const themeData = [
   {
@@ -35,5 +37,9 @@ export const themeData = [
   {
     day: cookies,
     night: blueberries,
+  },
+  {
+    day: sushi,
+    night: cocktail,
   },
 ];
