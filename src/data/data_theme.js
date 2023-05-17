@@ -1,38 +1,39 @@
+import cucumber from "../refs/icons/theme_day/cucumber.svg";
+import eggplant from "../refs/icons/theme_night/eggplant.svg";
+import banana from "../refs/icons/theme_day/banana.svg";
+import eggs from "../refs/icons/theme_night/eggs.svg";
+import melon from "../refs/icons/theme_day/melon.svg";
+import watermelon from "../refs/icons/theme_night/watermelon.svg";
+import celery from "../refs/icons/theme_day/celery.svg";
+import radish from "../refs/icons/theme_night/radish.svg";
+import pineapple from "../refs/icons/theme_day/pineapple.svg";
+import grapes from "../refs/icons/theme_night/grapes.svg";
+import cookies from "../refs/icons/theme_day/cookies.svg";
+import blueberries from "../refs/icons/theme_night/blueberries.svg";
+
 export const themeData = [
-  [
-    {
-      day: "../refs/icons/theme_day/cucumber.svg",
-      night: "../refs/icons/theme_night/eggplant.svg",
-    },
-  ],
-  [
-    {
-      day: "../refs/icons/theme_day/banana.svg",
-      night: "../refs/icons/theme_night/eggs.svg",
-    },
-  ],
-  [
-    {
-      day: "../refs/icons/theme_day/melon.svg",
-      night: "../refs/icons/theme_night/watermelon.svg",
-    },
-  ],
-  [
-    {
-      day: "../refs/icons/theme_day/cerely.svg",
-      night: "../refs/icons/theme_night/radish.svg",
-    },
-  ],
-  [
-    {
-      day: "../refs/icons/theme_day/pineapple.svg",
-      night: "../refs/icons/theme_night/grapes.svg",
-    },
-  ],
-  [
-    {
-      day: "../refs/icons/theme_day/cookies.svg",
-      night: "../refs/icons/theme_night/blueberries.svg",
-    },
-  ],
+  {
+    'day': cucumber,
+    'night': eggplant,
+  },
+  {
+    'day': banana,
+    'night': eggs,
+  },
+  {
+    day: melon,
+    night: watermelon,
+  },
+  {
+    day: celery,
+    night: radish,
+  },
+  {
+    day: pineapple,
+    night: grapes,
+  },
+  {
+    day: cookies,
+    night: blueberries,
+  },
 ];
