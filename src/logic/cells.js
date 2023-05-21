@@ -10,6 +10,7 @@ export function createCells() {
 
   const minesweeperCellsNumber = 10;
   const firstLaunchMinesNumber = 10;
+  const mines = [];
   let j = 0;
   const withoutMines = Array(
     minesweeperCellsNumber * minesweeperCellsNumber - firstLaunchMinesNumber
@@ -28,6 +29,7 @@ export function createCells() {
     minesweeperCell.classList.add(shuffledArray[i]);
     if (shuffledArray[i] === "minesweeper_new_mine") {
       minesweeperCell.style.backgroundImage = `url(${minesPics[j]})`;
+      mines.push(minesweeperCell);
       j += 1;
     }
     minesweeperField.append(minesweeperCell);
@@ -37,6 +39,14 @@ export function createCells() {
   cellsArray.forEach((element) => {
     element.addEventListener("click", () => {
       element.style.backgroundColor = "transparent";
+    });
+  });
+
+  mines.forEach((element) => {
+    const body = document.querySelector(".minesweeper_body");
+    element.addEventListener("click", () => {
+      body.insertAdjacentElement("afterbegin", createOverlay());
+      body.insertAdjacentElement("afterbegin", loseModal());
     });
   });
 
