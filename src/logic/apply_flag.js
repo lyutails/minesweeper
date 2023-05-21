@@ -17,6 +17,7 @@ export function applyFlag(flagsPicsArray) {
         elem.addEventListener("contextmenu", (e) => {
           e.preventDefault();
           e.target.style.backgroundImage = `url(${flagsPicsArray.reverse()[0].pic})`;
+          e.target.classList.add('minesweeper_flagged');
           flagsPicsArray.reverse().pop();
           flags.removeChild(flags.lastChild);
           console.log(flagsPicsArray);

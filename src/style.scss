@@ -256,6 +256,10 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
+  &_checked {
+    background-color: rgb(247, 247, 97);
+  }
+
   &_new_mine {
     width: calc(100% * (1 / 10));
     aspect-ratio: 1 / 1;
