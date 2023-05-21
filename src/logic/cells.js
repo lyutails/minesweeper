@@ -205,11 +205,9 @@ export function createCells() {
 
     cellsArray.forEach(minesweeperCell => {
       if (minesweeperCell.classList.contains("minesweeper_new_mine")) {
-        // minesweeperCell.innerHTML = '💣';
-        // minesweeperCell.style.backgroundImage = `url(${minesPics[j]})`;
-
         mines.forEach((mine, j) => {
           mine.style.backgroundImage = `url(${minesPics[j]})`;
+          mine.style.backgroundColor = 'rgb(213, 0, 60)';
         })
       }
     });

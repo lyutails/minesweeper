@@ -272,7 +272,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
-    background-color: rgb(213, 0, 60);
+    // background-color: rgb(213, 0, 60);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -280,18 +280,6 @@ body::-webkit-scrollbar-thumb {
       cursor: pointer;
     }
   }
-
-  // &_cell_cover {
-  //   width: 100%;
-  //   height: 100%;
-  //   border: none;
-  //   display: inline-block;
-  //   background-color: rgb(59, 141, 59);
-
-  //   &:hover {
-  //     cursor: pointer;
-  //   }
-  // }
 
   &_footer {
     display: flex;
