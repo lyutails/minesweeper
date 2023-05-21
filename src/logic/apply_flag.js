@@ -12,13 +12,13 @@ export function applyFlag(flagsPicsArray) {
         });
       });
       let flagsCount = 9;
+      const flags = document.querySelector('.minesweeper_flags_holder');
       allCells.forEach((elem, i) => {
         elem.addEventListener("contextmenu", (e) => {
           e.preventDefault();
           e.target.style.backgroundImage = `url(${flagsPicsArray.reverse()[0].pic})`;
           flagsPicsArray.reverse().pop();
-          // flagsPicsArray.at(0).style.display = 'none';
-          // flagsPicsArray.reverse()[i].style.opacity = '0';
+          flags.removeChild(flags.lastChild);
           console.log(flagsPicsArray);
           minesCounter.textContent = `${flagsCount--}`;
         });
