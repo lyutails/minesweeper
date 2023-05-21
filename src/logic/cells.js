@@ -1,50 +1,44 @@
-import { changeTheme } from "./change_theme";
-import { placeDefaultMines } from "./place_default_mines";
+import { minesData } from "../data/data_mines";
+import { loseModal } from "../look/lose_modal";
+import { createOverlay } from "../look/overlay";
+import { addMinesPics } from "./add_mines_pics";
+import { shuffleMines } from "./shuffle_mines";
 
 export function createCells() {
   const minesweeperField = document.createElement("div");
   minesweeperField.classList.add("minesweeper_field");
 
   const minesweeperCellsNumber = 10;
+  const firstLaunchMinesNumber = 10;
+  let j = 0;
+  const withoutMines = Array(
+    minesweeperCellsNumber * minesweeperCellsNumber - firstLaunchMinesNumber
+  ).fill("empty");
+  const minesArray = Array(firstLaunchMinesNumber).fill("minesweeper_new_mine");
+  const minesPics = shuffleMines(minesData).slice(0, firstLaunchMinesNumber);
+  const emptyPlusMinesArray = withoutMines.concat(minesArray);
+  const shuffledArray = emptyPlusMinesArray.sort(() => Math.random() - 0.5);
+  console.log(shuffledArray);
+
   let cellsArray = new Array();
-  let cellsCoverArray = [];
-  for (let i = 0; i < minesweeperCellsNumber*minesweeperCellsNumber; i++) {
-    const minesweeperCell = document.createElement("span");
-    minesweeperCell.setAttribute('id', i);
+  for (let i = 0; i < minesweeperCellsNumber * minesweeperCellsNumber; i++) {
+    const minesweeperCell = document.createElement("div");
+    minesweeperCell.setAttribute("id", i);
     minesweeperCell.classList.add("minesweeper_cell");
+    minesweeperCell.classList.add(shuffledArray[i]);
+    if (shuffledArray[i] === "minesweeper_new_mine") {
+      minesweeperCell.style.backgroundImage = `url(${minesPics[j]})`;
+      j += 1;
+    }
     minesweeperField.append(minesweeperCell);
     cellsArray.push(minesweeperCell);
-    // const minesweeperCellCover = document.createElement("span");
-    // minesweeperCellCover.classList.add("minesweeper_cell_cover");
-    // cellsArray[i].append(minesweeperCellCover);
-    // cellsCoverArray.push(minesweeperCellCover);
-    // minesweeperCellCover.setAttribute('id', i);
   }
 
-  cellsCoverArray.forEach(element => {
-    element.addEventListener('click', () => {
-      element.style.backgroundColor = 'transparent';
-    })
-  })
-
-  placeDefaultMines(cellsArray);
-
-// add numbers
-
-// for (let i = 0; i < cellsCoverArray.length; i++) {
-//   let width = 10;
-//   let total = 0;
-//   const isLeftEdge = (i % width === 0);
-//   const isRightEdge = (i % width === width - 1);
-
-//   if (cellsCoverArray[i].children.classList.contains('new_mine')) {
-//     if (i > 0 && !isLeftEdge && cellsCoverArray[i - 1].classList.contains('new_mine')) total++;
-//     if (i > 9 && !isRightEdge && cellsCoverArray[i + 1 - width].classList.contains('new_mine')) total++;
-//     cellsCoverArray[i].setAttribute('data', total);
-//     console.log(cellsCoverArray[i]);
-//   }
-// }
+  cellsArray.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.style.backgroundColor = "transparent";
+    });
+  });
 
   return minesweeperField;
 }
-
