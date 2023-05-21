@@ -4,6 +4,8 @@ import { createBody } from "./body";
 import { fieldSize } from "../logic/field_size";
 import { pickSize } from "./size";
 import { createFlags } from "./flags";
+import { tigerClicks } from "../logic/tiger_clicks_anim";
+import { startTimer } from "../logic/set_time";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -17,12 +19,26 @@ export function createLayout() {
   const minesweeperTimer = document.createElement("div");
   minesweeperTimer.classList.add("minesweeper_timer");
   minesweeperHeader.append(minesweeperTimer);
-  minesweeperTimer.textContent = "time";
+
+  const minesweeperTimeTitle = document.createElement('div');
+  minesweeperTimeTitle.classList.add('minesweeper_time_title');
+  minesweeperTimer.append(minesweeperTimeTitle);
+
+  const minesweeperTimeName = document.createElement('p');
+  minesweeperTimeName.classList.add('minesweeper_time_name');
+  minesweeperTimeTitle.append(minesweeperTimeName);
+  minesweeperTimeName.textContent = "time";
+
+  const minesweeperTimeEyes = document.createElement('span');
+  minesweeperTimeEyes.classList.add('minesweeper_time_eyes');
+  minesweeperTimeTitle.append(minesweeperTimeEyes);
 
   const minesweeperTime = document.createElement("div");
   minesweeperTime.classList.add("minesweeper_time");
   minesweeperTimer.append(minesweeperTime);
-  minesweeperTime.textContent = "0";
+  minesweeperTime.textContent = "0:0";
+
+  startTimer(minesweeperTime);
 
   minesweeperHeader.append(createFlags());
 
@@ -66,6 +82,8 @@ export function createLayout() {
   const minesweeperDangerTiger = document.createElement("span");
   minesweeperDangerTiger.classList.add("minesweeper_danger_tiger");
   minesweeperFooter.append(minesweeperDangerTiger);
+
+  tigerClicks(minesweeperDangerTiger);
 
   minesweeperFooter.append(createTheme());
 

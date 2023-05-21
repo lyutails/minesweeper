@@ -1,4 +1,5 @@
 import { flagsData } from "../data/data_flags";
+import { applyFlag } from "../logic/apply_flag";
 import { shuffleFlags } from "../logic/shuffle_flags";
 
 export function createFlags() {
@@ -15,6 +16,8 @@ export function createFlags() {
     minesweeperFlagPic.style.backgroundImage = `url(${flagsPicsArray[i].pic})`;
     minesweeperFlagsHolder.append(minesweeperFlagPic);
   }
+
+  applyFlag(flagsPicsArray);
 
   return minesweeperFlagsHolder;
 }

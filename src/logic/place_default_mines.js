@@ -5,7 +5,28 @@ import { createOverlay } from "../look/overlay";
 import { indicateMines } from "./indicate_mines";
 import { shuffleMines } from "./shuffle_mines";
 
-export function placeDefaultMines(cellsCoverArray) {
+export function placeDefaultMines(cellsArray) {
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      (function () {
+        const field = document.querySelector(".minesweeper_field");
+        const handler = (function () {
+          let click = 0;
+          return function () {
+            if (click === 0) {
+              alert("clicked");
+            }
+            click++;
+          };
+        })();
+
+        field.addEventListener("click", handler, false);
+      })();
+    },
+    false
+  );
+
   const firstLaunchMinesNumber = 10;
   const defaultMines = shuffleMines(minesData).slice(0, firstLaunchMinesNumber);
   const withoutMines = [];
@@ -14,8 +35,7 @@ export function placeDefaultMines(cellsCoverArray) {
     const newMine = document.createElement("span");
     newMine.classList.add("new_mine");
     newMine.style.backgroundImage = `url(${defaultMines[i]})`;
-    const appendTo =
-      cellsCoverArray[Math.floor(Math.random() * cellsCoverArray.length)];
+    const appendTo = cellsArray[Math.floor(Math.random() * cellsArray.length)];
     if (!appendTo.contains(newMine)) {
       appendTo.append(newMine);
       minesArray.push(newMine);
@@ -28,8 +48,8 @@ export function placeDefaultMines(cellsCoverArray) {
   minesArray.forEach((element) => {
     const body = document.querySelector(".minesweeper_body");
     element.addEventListener("click", () => {
-      body.insertAdjacentElement('afterbegin', createOverlay());
-      body.insertAdjacentElement('afterbegin', loseModal());
+      body.insertAdjacentElement("afterbegin", createOverlay());
+      body.insertAdjacentElement("afterbegin", loseModal());
     });
   });
 }

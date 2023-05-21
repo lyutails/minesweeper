@@ -84,10 +84,8 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_timer {
-    width: 20%;
+    width: 30%;
     background-color: rgba(59, 237, 121, 0.85);
-    font-family: "Rubik Beastly", cursive;
-    font-size: 1.5rem;
     text-align: center;
     padding-top: 5px;
     border-radius: 10px;
@@ -97,7 +95,61 @@ body::-webkit-scrollbar-thumb {
     user-select: none;
   }
 
+  &_time_title {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Rubik Beastly", cursive;
+    font-size: 1.5rem;
+  }
+
+  &_time_eyes {
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    background-image: url('./refs/icons/time/eyes_01.svg');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: eyes_anim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes eyes_anim {
+    from {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+    5% {
+      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+    }
+    10% {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+    15% {
+      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+    }
+    20% {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+    75% {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+    80% {
+      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+    }
+    85% {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+    to {
+      background-image: url('./refs/icons/time/eyes_01.svg');
+    }
+  }
+
   &_time {
+    font-family: "Rubik Beastly", cursive;
     font-size: 3rem;
   }
 
@@ -197,23 +249,24 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &_cell_cover {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: inline-block;
     background-color: rgb(59, 141, 59);
 
     &:hover {
       cursor: pointer;
     }
   }
+
+  // &_cell_cover {
+  //   width: 100%;
+  //   height: 100%;
+  //   border: none;
+  //   display: inline-block;
+  //   background-color: rgb(59, 141, 59);
+
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+  // }
 
   &_footer {
     display: flex;
@@ -382,15 +435,51 @@ body::-webkit-scrollbar-thumb {
 
   &_danger_text {
     font-size: 1.9rem;
-    color: rgb(10, 63, 10);
+    color: rgb(10, 70, 10);
     position: relative;
     z-index: 10;
     mix-blend-mode: multiply;
-    opacity: 0.8;
+    // opacity: 0.8;
     font-family: "Rubik Burned", cursive;
     text-align: center;
     transform: translateX(5px);
-    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      mix-blend-mode: color;
+      background: rgb(198, 0, 46);
+      // background-image: url('./refs/pics/danger_red.jpg');
+      transform: skewX(-20deg) translateX(-110%);
+      backdrop-filter: blur(2px);
+      transition: all 0.4s ease-in-out;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:hover::before {
+      content: '';
+      position: absolute;
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      mix-blend-mode: color;
+      background: rgb(198, 0, 46);
+      // background-image: url('./refs/pics/danger_red.jpg');
+      transform: skewX(-20deg) translateX(200%);
+      backdrop-filter: blur(2px);
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   &_danger_tiger {
@@ -401,11 +490,14 @@ body::-webkit-scrollbar-thumb {
     background-size: contain;
     resize: both;
     display: inline-block;
-    animation-name: tiger_anim_four;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-play-state: paused;
+
+    &.on {
+      animation-name: tiger_anim_four;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      // animation-play-state: paused;
+    }
   }
 
   @keyframes tiger_anim_one {
