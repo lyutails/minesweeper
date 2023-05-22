@@ -6,11 +6,13 @@ import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
+import { getFirstClick } from "./first_click";
 
 export function createCells() {
   let isGame = false;
   const minesweeperField = document.createElement("div");
   minesweeperField.classList.add("minesweeper_field");
+  minesweeperField.setAttribute("id", "field_id");
   let isGameOver = false;
   let isWin = false;
   const minesweeperCellsNumber = 10;
@@ -236,7 +238,6 @@ export function createCells() {
         !cell.classList.contains("minesweeper_checked") &&
         !cell.classList.contains("minesweeper_new_mine")
     );
-    console.log(leftBombs);
     if (leftBombs.length === 0) {
       const body = document.querySelector(".minesweeper_body");
       appendWinAudio();
