@@ -92,9 +92,19 @@ export function createLayout() {
   minesweeperWrapper.append(minesweeperInstruction);
   minesweeperInstruction.textContent = "place / remove flags with rmb or drag&drop";
 
+  const minesweeperCopyright = document.createElement('div');
+  minesweeperCopyright.classList.add("minesweeper_copyright");
+  minesweeperWrapper.append(minesweeperCopyright);
+
+  const minesweeperSchool = document.createElement("a");
+  minesweeperSchool.classList.add("minesweeper_school");
+  minesweeperCopyright.append(minesweeperSchool);
+  minesweeperSchool.textContent = "RSSchool";
+  minesweeperSchool.setAttribute("href", "https://rs.school/");
+
   const minesweeperAuthor = document.createElement("a");
   minesweeperAuthor.classList.add("minesweeper_author");
-  minesweeperWrapper.append(minesweeperAuthor);
+  minesweeperCopyright.append(minesweeperAuthor);
   minesweeperAuthor.textContent = "2023 @lyutails";
   minesweeperAuthor.setAttribute("href", "https://github.com/lyutails");
 }

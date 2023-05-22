@@ -627,9 +627,30 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-  &_author {
+  &_copyright {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &_school {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1.5rem;
+    color: rgba(255, 144, 158);
+    text-shadow: 0 0 10px rgb(3, 36, 3), 0 0 15px rgb(4, 53, 4),
+      0 0 20px rgb(9, 96, 9);
+    // text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(249, 255, 67);
+    }
+  }
+
+  &_author {
     text-align: center;
     font-family: "Shadows Into Light", cursive;
     font-size: 1.5rem;
