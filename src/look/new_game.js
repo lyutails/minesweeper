@@ -8,7 +8,7 @@ export function newGame() {
   newgameText.classList.add("newgame_text");
   newgameModal.append(newgameText);
   newgameText.textContent = "pick how many mines you want";
-  // pick how dangerously you want it to be
+  // how dangerously you wish it to be
 
   const newgameMines = document.createElement("div");
   newgameMines.classList.add("newgame_mines");

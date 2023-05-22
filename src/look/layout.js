@@ -90,7 +90,7 @@ export function createLayout() {
   const minesweeperInstruction = document.createElement("div");
   minesweeperInstruction.classList.add("minesweeper_instruction");
   minesweeperWrapper.append(minesweeperInstruction);
-  minesweeperInstruction.textContent = "place flags with rmb or drag&drop";
+  minesweeperInstruction.textContent = "place / remove flags with rmb or drag&drop";
 
   const minesweeperAuthor = document.createElement("a");
   minesweeperAuthor.classList.add("minesweeper_author");

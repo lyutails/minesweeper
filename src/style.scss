@@ -108,7 +108,7 @@ body::-webkit-scrollbar-thumb {
   &_time_eyes {
     width: 30%;
     aspect-ratio: 1 / 1;
-    background-image: url('./refs/icons/time/eyes_01.svg');
+    background-image: url("./refs/icons/time/eyes_01.svg");
     display: inline-block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -120,31 +120,31 @@ body::-webkit-scrollbar-thumb {
 
   @keyframes eyes_anim {
     from {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
     5% {
-      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+      background-image: url("./refs/icons/time/eyes_01_closed.svg");
     }
     10% {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
     15% {
-      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+      background-image: url("./refs/icons/time/eyes_01_closed.svg");
     }
     20% {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
     75% {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
     80% {
-      background-image: url('./refs/icons/time/eyes_01_closed.svg');
+      background-image: url("./refs/icons/time/eyes_01_closed.svg");
     }
     85% {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
     to {
-      background-image: url('./refs/icons/time/eyes_01.svg');
+      background-image: url("./refs/icons/time/eyes_01.svg");
     }
   }
 
@@ -294,12 +294,26 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 127, 219, 0.8);
-    padding: 10px 0px 10px 0px;
+    padding: 5px 0px 5px 0px;
     border-radius: 10px;
     user-select: none;
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  &_default {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: "Rubik Glitch", cursive;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      color: cornsilk;
     }
   }
 
@@ -462,7 +476,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 50%;
       aspect-ratio: 1 / 1;
@@ -479,7 +493,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     &:hover::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 50%;
       aspect-ratio: 1 / 1;
@@ -599,7 +613,7 @@ body::-webkit-scrollbar-thumb {
 
   &_instruction {
     font-family: "Shadows Into Light", cursive;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align: center;
     color: rgb(249, 255, 67);
     text-shadow: 0 0 10px rgb(3, 36, 3), 0 0 15px rgb(4, 53, 4),
@@ -618,7 +632,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     text-align: center;
     font-family: "Shadows Into Light", cursive;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: rgba(255, 144, 158);
     text-shadow: 0 0 10px rgb(3, 36, 3), 0 0 15px rgb(4, 53, 4),
       0 0 20px rgb(9, 96, 9);
@@ -932,4 +946,52 @@ body::-webkit-scrollbar-thumb {
   white-space: pre-line;
   z-index: 150;
   user-select: none;
+}
+
+.win_modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  min-width: 320px;
+  max-width: 480px;
+  aspect-ratio: 1 / 0.6;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  white-space: pre-line;
+  z-index: 150;
+  user-select: none;
+  background: linear-gradient(
+    124deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  animation-name: rainbow_anim;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow_anim {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
 }

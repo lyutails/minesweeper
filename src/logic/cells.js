@@ -8,6 +8,7 @@ export function createCells() {
   const minesweeperField = document.createElement("div");
   minesweeperField.classList.add("minesweeper_field");
   let isGameOver = false;
+  let isWin = false;
   const minesweeperCellsNumber = 10;
   const firstLaunchMinesNumber = 10;
   const mines = [];
@@ -19,7 +20,6 @@ export function createCells() {
   const minesPics = shuffleMines(minesData).slice(0, firstLaunchMinesNumber);
   const emptyPlusMinesArray = withoutMines.concat(minesArray);
   const shuffledArray = emptyPlusMinesArray.sort(() => Math.random() - 0.5);
-  console.log(shuffledArray);
 
   let cellsArray = new Array();
   for (let i = 0; i < minesweeperCellsNumber * minesweeperCellsNumber; i++) {
@@ -203,14 +203,35 @@ export function createCells() {
   function gameOver(minesweeperCell) {
     isGameOver = true;
 
-    cellsArray.forEach(minesweeperCell => {
+    cellsArray.forEach((minesweeperCell) => {
       if (minesweeperCell.classList.contains("minesweeper_new_mine")) {
         mines.forEach((mine, j) => {
           mine.style.backgroundImage = `url(${minesPics[j]})`;
-          mine.style.backgroundColor = 'rgb(213, 0, 60)';
-        })
+          mine.style.backgroundColor = "rgb(213, 0, 60)";
+        });
       }
     });
+  }
+
+  // console.log(cellsArray);
+
+  function winConditionOne() {
+    isWin = true;
+    const cells = document.querySelectorAll(".minesweeper_cell");
+    for (let i = 0; i < cells.length; i++) {
+      if (
+        cells[i].classList.contains("minesweeper_new_mine") &&
+        cells[i].classList.contains("minesweeper_flagged")
+      )
+        alert("you win ^^");
+      console.log("win");
+    }
+  }
+  winConditionOne();
+
+  function winGame() {
+    isWin = true;
+    alert("you win ^^");
   }
 
   return minesweeperField;

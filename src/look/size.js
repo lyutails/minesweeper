@@ -1,8 +1,14 @@
+import { defaultSize } from "../logic/default_game";
 import { fieldSize } from "../logic/field_size";
 
 export function pickSize() {
   const minesweeperSize = document.createElement("div");
   minesweeperSize.classList.add("minesweeper_size");
+
+  const minesweeperDefault = document.createElement('span');
+  minesweeperDefault.classList.add('minesweeper_default');
+  minesweeperSize.append(minesweeperDefault);
+  minesweeperDefault.textContent = 'default';
 
   const minesweeperSmall = document.createElement("span");
   minesweeperSmall.classList.add("minesweeper_small");
@@ -20,6 +26,8 @@ export function pickSize() {
   minesweeperLarge.textContent = "20x20";
 
   let sizeArray = [minesweeperSmall, minesweeperMedium, minesweeperLarge];
+
+  defaultSize(minesweeperDefault);
 
   fieldSize(sizeArray);
 
