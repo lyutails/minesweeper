@@ -15,7 +15,6 @@ export function applyFlag(flagsPicsArray) {
           clicksCounter.textContent = `${clicksCount++}`;
         });
       });
-      // if (gameOver) return;
       let flagsCount = 9;
 
       const flags = document.querySelector(".minesweeper_flags_holder");

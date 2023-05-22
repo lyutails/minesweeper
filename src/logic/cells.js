@@ -2,19 +2,19 @@ import { minesData } from "../data/data_mines";
 import { loseModal } from "../look/lose_modal";
 import { winModal } from "../look/win_modal";
 import { createOverlay } from "../look/overlay";
-import { addMinesPics } from "./add_mines_pics";
 import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
 
 export function createCells() {
+  let isGame = false;
   const minesweeperField = document.createElement("div");
   minesweeperField.classList.add("minesweeper_field");
   let isGameOver = false;
   let isWin = false;
   const minesweeperCellsNumber = 10;
-  const firstLaunchMinesNumber = 1;
+  const firstLaunchMinesNumber = 10;
   const mines = [];
   let j = 0;
   const withoutMines = Array(
@@ -40,6 +40,7 @@ export function createCells() {
     cellsArray.push(minesweeperCell);
 
     minesweeperCell.addEventListener("click", function (e) {
+      isGame = true;
       click(minesweeperCell);
       winConditionOne();
     });
