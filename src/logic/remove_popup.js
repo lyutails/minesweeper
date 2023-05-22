@@ -7,8 +7,12 @@ export function removePopup(overlay) {
       // newgameModal.remove();
       if (modal) {
         modal.remove();
-      } if (document.querySelector(".lose_modal_body")) {
+      }
+      if (document.querySelector(".lose_modal_body")) {
         document.querySelector(".lose_modal_body").remove();
+      }
+      if (document.querySelector(".win_modal_body")) {
+        document.querySelector(".win_modal_body").remove();
       }
     });
   }

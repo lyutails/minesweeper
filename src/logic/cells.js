@@ -1,7 +1,11 @@
 import { minesData } from "../data/data_mines";
 import { loseModal } from "../look/lose_modal";
+import { winModal } from "../look/win_modal";
 import { createOverlay } from "../look/overlay";
 import { addMinesPics } from "./add_mines_pics";
+import { appendAudio } from "./audio";
+import { appendLoseAudio } from "./audio_lose";
+import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
 
 export function createCells() {
@@ -10,7 +14,7 @@ export function createCells() {
   let isGameOver = false;
   let isWin = false;
   const minesweeperCellsNumber = 10;
-  const firstLaunchMinesNumber = 10;
+  const firstLaunchMinesNumber = 1;
   const mines = [];
   let j = 0;
   const withoutMines = Array(
@@ -37,6 +41,7 @@ export function createCells() {
 
     minesweeperCell.addEventListener("click", function (e) {
       click(minesweeperCell);
+      winConditionOne();
     });
   }
 
@@ -125,6 +130,7 @@ export function createCells() {
       return;
     if (minesweeperCell.classList.contains("minesweeper_new_mine")) {
       gameOver(minesweeperCell);
+      appendLoseAudio();
     } else {
       let total = minesweeperCell.getAttribute("data");
       if (total != 0) {
@@ -213,26 +219,37 @@ export function createCells() {
     });
   }
 
-  // console.log(cellsArray);
-
   function winConditionOne() {
     isWin = true;
-    const cells = document.querySelectorAll(".minesweeper_cell");
-    for (let i = 0; i < cells.length; i++) {
-      if (
-        cells[i].classList.contains("minesweeper_new_mine") &&
-        cells[i].classList.contains("minesweeper_flagged")
-      )
-        alert("you win ^^");
-      console.log("win");
+    // const cells = Array.from(document.querySelectorAll(".minesweeper_cell"));
+    // console.log(cells);
+    // for (let i = 0; i < cells.length; i++) {
+    //   if (
+    //     cells[i].classList.contains("minesweeper_new_mine") &&
+    //     cells[i].classList.contains("minesweeper_flagged")
+    //   )
+    //     alert("you win ^^");
+    // }
+    const leftBombs = cellsArray.filter(
+      (cell) =>
+        !cell.classList.contains("minesweeper_checked") &&
+        !cell.classList.contains("minesweeper_new_mine")
+    );
+    console.log(leftBombs);
+    if (leftBombs.length === 0) {
+      const body = document.querySelector(".minesweeper_body");
+      appendWinAudio();
+      body.insertAdjacentElement("afterbegin", createOverlay());
+      body.insertAdjacentElement("afterbegin", winModal());
     }
   }
-  winConditionOne();
 
-  function winGame() {
-    isWin = true;
-    alert("you win ^^");
-  }
+  // function winGame() {
+  //   isWin = true;
+  //   alert("you win ^^");
+  // }
+
+  appendAudio(cellsArray);
 
   return minesweeperField;
 }

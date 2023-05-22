@@ -1,3 +1,5 @@
+import { createFlags } from "../look/flags";
+
 export function applyFlag(flagsPicsArray) {
   document.addEventListener(
     "DOMContentLoaded",
@@ -15,18 +17,34 @@ export function applyFlag(flagsPicsArray) {
       });
       // if (gameOver) return;
       let flagsCount = 9;
+
       const flags = document.querySelector(".minesweeper_flags_holder");
+      window.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+      });
       allCells.forEach((elem, i) => {
         elem.addEventListener("contextmenu", (e) => {
           if (!e.target.classList.contains("minesweeper_flagged")) {
-            e.preventDefault();
             e.target.style.backgroundImage = `url(${
-              flagsPicsArray.reverse()[0].pic
+              flagsPicsArray.at(-1).pic
             })`;
+            e.currentTarget.setAttribute("data-id", flagsPicsArray.at(-1).pic);
+            flagsPicsArray.pop();
             e.target.classList.add("minesweeper_flagged");
-            flagsPicsArray.reverse().pop();
             flags.removeChild(flags.lastChild);
             minesCounter.textContent = `${flagsCount--}`;
+          } else {
+            if (e.target.classList.contains("minesweeper_flagged")) {
+              const url = e.currentTarget.getAttribute('data-id');
+              const minesweeperSpan = document.createElement('span');
+
+              e.currentTarget.style = '';
+              e.currentTarget.classList.remove('minesweeper_flagged');
+              minesweeperSpan.classList.backgroundImage = `url(${e.currentTarget.getAttribute('data-id')})`;
+              flags.append(minesweeperSpan);
+              minesCounter.textContent = `${flagsCount++}`;
+              flagsPicsArray.push({ pic: url });
+            }
           }
         });
       });
