@@ -19,6 +19,7 @@ export function createCells() {
   const firstLaunchMinesNumber = 10;
   const mines = [];
   let j = 0;
+  getFirstClick();
   const withoutMines = Array(
     minesweeperCellsNumber * minesweeperCellsNumber - firstLaunchMinesNumber
   ).fill("minesweeper_empty_cell");

@@ -6,6 +6,7 @@ import { pickSize } from "./size";
 import { createFlags } from "./flags";
 import { tigerClicks } from "../logic/tiger_clicks_anim";
 import { startTimer } from "../logic/set_time";
+import { getFirstClick } from "../logic/first_click";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -38,7 +39,8 @@ export function createLayout() {
   minesweeperTimer.append(minesweeperTime);
   minesweeperTime.textContent = "0:0";
 
-  startTimer(minesweeperTime);
+  // startTimer(minesweeperTime);
+  // getFirstClick(startTimer(minesweeperTime));
 
   minesweeperHeader.append(createFlags());
 
