@@ -1,12 +1,9 @@
 import { createCells } from "../logic/cells";
 import { createTheme } from "./theme";
 import { createBody } from "./body";
-import { fieldSize } from "../logic/field_size";
 import { pickSize } from "./size";
 import { createFlags } from "./flags";
 import { tigerClicks } from "../logic/tiger_clicks_anim";
-import { startTimer } from "../logic/set_time";
-import { getFirstClick } from "../logic/first_click";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -38,9 +35,6 @@ export function createLayout() {
   minesweeperTime.classList.add("minesweeper_time");
   minesweeperTimer.append(minesweeperTime);
   minesweeperTime.textContent = "0:0";
-
-  // startTimer(minesweeperTime);
-  // getFirstClick(startTimer(minesweeperTime));
 
   minesweeperHeader.append(createFlags());
 
