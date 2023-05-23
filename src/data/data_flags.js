@@ -7,6 +7,7 @@ import cheese from '../refs/icons/flags/cheese.svg';
 import cherry from '../refs/icons/flags/cherry.svg';
 import corn from '../refs/icons/flags/corn.svg';
 import cupcake from '../refs/icons/flags/cupcake.svg';
+import dumpling from '../refs/icons/flags/dumpling.svg';
 import flower from '../refs/icons/flags/flower.svg';
 import garlic from '../refs/icons/flags/garlic.svg';
 import hamburger from  '../refs/icons/flags/hamburger.svg';
@@ -61,6 +62,9 @@ export const flagsData = [
     },
     {
         pic: cupcake
+    },
+    {
+        pic: dumpling
     },
     {
         pic: flower

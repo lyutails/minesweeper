@@ -11,7 +11,7 @@ export function createCells() {
   let isWin = false;
   let isFirstClick = false;
   const minesweeperCellsNumber = 10;
-  const firstLaunchMinesNumber = 1;
+  const firstLaunchMinesNumber = 10;
   const mines = [];
   let j = 0;
 
