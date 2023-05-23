@@ -29,20 +29,32 @@ export function changeTheme(
   });
 
   const field = document.querySelector(".minesweeper_field");
-    minesweeperNight.addEventListener("click", () => {
-      if (field.classList.contains("active")) {
-        return field;
-      } else {
-        field.classList.add("active");
-      }
-    });
-    minesweeperDay.addEventListener("click", () => {
-      if (document.querySelector(".minesweeper_field").classList.contains("active")) {
-        document.querySelector(".minesweeper_field").classList.remove("active");
-      } else {
-        return field;
-      }
-    });
+  minesweeperNight.addEventListener("click", () => {
+    if (field.classList.contains("active")) {
+      return field;
+    } else {
+      field.classList.add("active");
+    }
+    if (document.querySelectorAll(".minesweeper_cell")) {
+      document.querySelectorAll(".minesweeper_cell").forEach((element) => {
+        element.classList.add("active");
+      });
+    }
+  });
+  minesweeperDay.addEventListener("click", () => {
+    if (
+      document.querySelector(".minesweeper_field").classList.contains("active")
+    ) {
+      document.querySelector(".minesweeper_field").classList.remove("active");
+    } else {
+      return field;
+    }
+    if (document.querySelectorAll(".minesweeper_cell")) {
+      document.querySelectorAll(".minesweeper_cell").forEach((element) => {
+        element.classList.remove("active");
+      });
+    }
+  });
 
   themeCircles.forEach((element, i) => {
     const body = document.querySelector(".minesweeper_body");
@@ -58,11 +70,6 @@ export function changeTheme(
         } else {
           field.classList.add("active");
         }
-        if (document.querySelectorAll(".minesweeper_cell")) {
-          document.querySelectorAll(".minesweeper_cell").forEach((element) => {
-            element.classList.add("active");
-          });
-        }
       });
       minesweeperDay.addEventListener("click", () => {
         {
@@ -72,13 +79,6 @@ export function changeTheme(
           body.style.background = `url("${dataBackground[i].day}") center center / cover no-repeat fixed`;
           if (field) {
             field.classList.remove("active");
-          }
-          if (document.querySelectorAll(".minesweeper_cell")) {
-            document
-              .querySelectorAll(".minesweeper_cell")
-              .forEach((element) => {
-                element.classList.remove("active");
-              });
           }
         }
       });
