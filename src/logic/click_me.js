@@ -50,6 +50,14 @@ export function firstClick(
       });
     }
 
+    if (minesweeperField.classList.contains("active")) {
+      if (document.querySelector(".minesweeper_cell")) {
+        [...document.querySelectorAll(".minesweeper_cell")].map((elem) =>
+          elem.classList.add("active")
+        );
+      }
+    }
+
     for (let i = 0; i < cellsArray.length; i++) {
       let total = 0;
       const isLeftSide = i % minesweeperCellsNumber === 0;
@@ -86,35 +94,35 @@ export function firstClick(
           )
         )
           total++;
-          if (
-            i < 98 &&
-            !isRightSide &&
-            cellsArray[i + 1].classList.contains("minesweeper_new_mine")
+        if (
+          i < 98 &&
+          !isRightSide &&
+          cellsArray[i + 1].classList.contains("minesweeper_new_mine")
+        )
+          total++;
+        if (
+          i < 90 &&
+          !isLeftSide &&
+          cellsArray[i - 1 + minesweeperCellsNumber].classList.contains(
+            "minesweeper_new_mine"
           )
-            total++;
-          if (
-            i < 90 &&
-            !isLeftSide &&
-            cellsArray[i - 1 + minesweeperCellsNumber].classList.contains(
-              "minesweeper_new_mine"
-            )
+        )
+          total++;
+        if (
+          i < 88 &&
+          !isRightSide &&
+          cellsArray[i + 1 + minesweeperCellsNumber].classList.contains(
+            "minesweeper_new_mine"
           )
-            total++;
-          if (
-            i < 88 &&
-            !isRightSide &&
-            cellsArray[i + 1 + minesweeperCellsNumber].classList.contains(
-              "minesweeper_new_mine"
-            )
+        )
+          total++;
+        if (
+          i < 89 &&
+          cellsArray[i + minesweeperCellsNumber].classList.contains(
+            "minesweeper_new_mine"
           )
-            total++;
-          if (
-            i < 89 &&
-            cellsArray[i + minesweeperCellsNumber].classList.contains(
-              "minesweeper_new_mine"
-            )
-          )
-            total++;
+        )
+          total++;
         cellsArray[i].setAttribute("data", total);
       }
     }

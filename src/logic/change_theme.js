@@ -35,14 +35,20 @@ export function changeTheme(
     } else {
       field.classList.add("active");
     }
-
-    for (let i = 0; i < document.querySelectorAll(".minesweeper_cell").length; i++) {
-      if (!document.querySelectorAll(".minesweeper_cell")[i].classList.contains('active')) {
-        document.querySelectorAll(".minesweeper_cell")[i].classList.add("active");
-      } else {
-        return;
-      }}
   });
+
+  minesweeperNight.addEventListener("click", () => {
+    if (field.classList.contains("active")) {
+      [...document.querySelectorAll(".minesweeper_cell")].map((elem) =>
+        elem.classList.add("active")
+      );
+    } else {
+      [...document.querySelectorAll(".minesweeper_cell")].map((elem) =>
+        elem.classList.remove("active")
+      );
+    }
+  });
+
   minesweeperDay.addEventListener("click", () => {
     if (
       document.querySelector(".minesweeper_field").classList.contains("active")
@@ -51,12 +57,23 @@ export function changeTheme(
     } else {
       return field;
     }
-    for (let i = 0; i < document.querySelectorAll(".minesweeper_cell").length; i++) {
-      if (document.querySelectorAll(".minesweeper_cell")[i].classList.contains('active')) {
-        document.querySelectorAll(".minesweeper_cell")[i].classList.remove("active");
+    for (
+      let i = 0;
+      i < document.querySelectorAll(".minesweeper_cell").length;
+      i++
+    ) {
+      if (
+        document
+          .querySelectorAll(".minesweeper_cell")
+          [i].classList.contains("active")
+      ) {
+        document
+          .querySelectorAll(".minesweeper_cell")
+          [i].classList.remove("active");
       } else {
         return;
-      }}
+      }
+    }
   });
 
   themeCircles.forEach((element, i) => {
@@ -73,10 +90,27 @@ export function changeTheme(
         } else {
           field.classList.add("active");
         }
-        if (document.querySelectorAll(".minesweeper_cell")) {
-          document.querySelectorAll(".minesweeper_cell").forEach((element) => {
-            element.classList.add("active");
-          });
+        // if (document.querySelectorAll(".minesweeper_cell")) {
+        //   document.querySelectorAll(".minesweeper_cell").forEach((element) => {
+        //     element.classList.add("active");
+        //   });
+        // }
+        for (
+          let i = 0;
+          i < document.querySelectorAll(".minesweeper_cell").length;
+          i++
+        ) {
+          if (
+            !document
+              .querySelectorAll(".minesweeper_cell")
+              [i].classList.contains("active")
+          ) {
+            document
+              .querySelectorAll(".minesweeper_cell")
+              [i].classList.add("active");
+          } else {
+            return;
+          }
         }
       });
       minesweeperDay.addEventListener("click", () => {
@@ -88,12 +122,29 @@ export function changeTheme(
           if (field) {
             field.classList.remove("active");
           }
-          if (document.querySelectorAll(".minesweeper_cell")) {
-            document
-              .querySelectorAll(".minesweeper_cell")
-              .forEach((element) => {
-                element.classList.remove("active");
-              });
+          // if (document.querySelectorAll(".minesweeper_cell")) {
+          //   document
+          //     .querySelectorAll(".minesweeper_cell")
+          //     .forEach((element) => {
+          //       element.classList.remove("active");
+          //     });
+          // }
+          for (
+            let i = 0;
+            i < document.querySelectorAll(".minesweeper_cell").length;
+            i++
+          ) {
+            if (
+              document
+                .querySelectorAll(".minesweeper_cell")
+                [i].classList.contains("active")
+            ) {
+              document
+                .querySelectorAll(".minesweeper_cell")
+                [i].classList.remove("active");
+            } else {
+              return;
+            }
           }
         }
       });
