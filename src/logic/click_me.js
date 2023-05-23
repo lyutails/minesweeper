@@ -1,5 +1,6 @@
 import { minesData } from "../data/data_mines";
 import { loseModal } from "../look/lose_modal";
+import { winModal } from "../look/win_modal";
 import { createOverlay } from "../look/overlay";
 import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";

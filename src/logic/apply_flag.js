@@ -1,5 +1,3 @@
-import { createFlags } from "../look/flags";
-
 export function applyFlag(flagsPicsArray) {
   document.addEventListener(
     "DOMContentLoaded",

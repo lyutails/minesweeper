@@ -6,7 +6,6 @@ export function appendAudio(cellsArray) {
       cellsArray[i].addEventListener("click", () => {
         const clickCell = soundsData.slice(-6);
         const randomCellSounds = clickCell.sort(() => Math.random() - 0.5).at(-1);
-        console.log(clickCell);
         const playCellSound = new Audio(randomCellSounds);
         playCellSound.play();
       });
