@@ -26,6 +26,8 @@
 // font-family: 'Passions Conflict', cursive;
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 // font-family: 'Pacifico', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+// font-family: 'Satisfy', cursive;
 
 :root {
   --scroll-color: linear-gradient(salmon, green);
@@ -231,7 +233,8 @@ body::-webkit-scrollbar-thumb {
     border: 5px solid salmon;
     margin-top: 20px;
     background-color: rgba(168, 221, 89, 0.8);
-    font-size: 4rem;
+    font-size: 3rem;
+    border-radius: 8px;
 
     &.active {
       background-color: rgba(89, 178, 241, 0.8);
@@ -256,6 +259,9 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     background-color: rgb(59, 141, 59);
+    border-radius: 8px;
+    user-select: none;
+    font-family: 'Pacifico', cursive;
 
     &.active {
       background-color: rgb(60, 116, 201);
@@ -319,7 +325,7 @@ body::-webkit-scrollbar-thumb {
 
   &_default {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
@@ -333,7 +339,7 @@ body::-webkit-scrollbar-thumb {
 
   &_small {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
@@ -347,7 +353,7 @@ body::-webkit-scrollbar-thumb {
 
   &_medium {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Rubik Glitch", cursive;
     margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
@@ -361,7 +367,7 @@ body::-webkit-scrollbar-thumb {
 
   &_large {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Rubik Glitch", cursive;
     transition: all 0.2s ease-in-out;
 
@@ -505,7 +511,7 @@ body::-webkit-scrollbar-thumb {
       background: rgb(198, 0, 46);
       transform: skewX(-20deg) translateX(-120%);
       backdrop-filter: blur(2px);
-      transition: all 0.4s ease-in-out;
+      transition: all 0.2s ease-in-out;
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
@@ -698,6 +704,90 @@ body::-webkit-scrollbar-thumb {
     &:hover {
       cursor: pointer;
       color: rgb(249, 255, 67);
+    }
+  }
+
+  &_buttons {
+    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+  }
+
+  &_save {
+    width: 20%;
+    background-color: rgba(255, 152, 62, 0.85);
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-family: "Satisfy", cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 152, 62, 0.75);
+    }
+
+    &.active {
+      background-color: rgba(77, 77, 247, 0.85);
+    }
+  }
+
+  &_load {
+    width: 20%;
+    background-color: rgba(255, 152, 62, 0.85);
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-family: "Satisfy", cursive;
+    font-size: 1.8rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 152, 62, 0.75);
+    }
+
+    &.active {
+      background-color: rgba(77, 77, 247, 0.85);
+    }
+  }
+
+  &_top {
+    width: 20%;
+    background-color: rgba(255, 152, 62, 0.85);
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-family: "Satisfy", cursive;
+    font-size: 1.8rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 152, 62, 0.75);
+    }
+
+    &.active {
+      background-color: rgba(77, 77, 247, 0.85);
     }
   }
 }
@@ -1071,7 +1161,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 150;
   user-select: none;
 }
-
 
 .minesweeper_danger_sign .active > .minesweeper_danger_text {
   color: rgb(10, 70, 10);

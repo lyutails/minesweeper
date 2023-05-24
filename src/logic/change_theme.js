@@ -4,7 +4,7 @@ export function changeTheme(
   minesweeperNight,
   minesweeperDay,
   minesweeperTheme,
-  themeCircles
+  themeCircles,
 ) {
   const body = document.querySelector(".minesweeper_body");
 

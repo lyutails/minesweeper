@@ -4,6 +4,7 @@ import { createBody } from "./body";
 import { pickSize } from "./size";
 import { createFlags } from "./flags";
 import { tigerClicks } from "../logic/tiger_clicks_anim";
+import { changeButtonsTheme } from "../logic/buttons_theme";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -107,4 +108,25 @@ export function createLayout() {
   minesweeperCopyright.append(minesweeperAuthor);
   minesweeperAuthor.textContent = "2023 @lyutails";
   minesweeperAuthor.setAttribute("href", "https://github.com/lyutails");
+
+  const minesweeperButtons = document.createElement('div');
+  minesweeperButtons.classList.add('minesweeper_buttons');
+  minesweeperWrapper.append(minesweeperButtons);
+
+  const minesweeperSave = document.createElement('div');
+  minesweeperSave.classList.add('minesweeper_save');
+  minesweeperButtons.append(minesweeperSave);
+  minesweeperSave.textContent = 'save';
+
+  const minesweeperLoad = document.createElement('div');
+  minesweeperLoad.classList.add('minesweeper_load');
+  minesweeperButtons.append(minesweeperLoad);
+  minesweeperLoad.textContent = 'load';
+
+  const minesweeperTop = document.createElement('div');
+  minesweeperTop.classList.add('minesweeper_top');
+  minesweeperButtons.append(minesweeperTop);
+  minesweeperTop.textContent = 'top';
+
+  changeButtonsTheme(minesweeperSave, minesweeperLoad, minesweeperTop);
 }
