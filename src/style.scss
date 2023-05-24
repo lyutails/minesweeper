@@ -1030,3 +1030,19 @@ body::-webkit-scrollbar-thumb {
     background-position: 0% 82%;
   }
 }
+
+.minesweeper_checked[data='1'] {
+  color: #900041;
+}
+
+.minesweeper_checked[data='2'] {
+  color: #005485;
+}
+
+.minesweeper_checked[data='3'] {
+  color: #ff6219;
+}
+
+.minesweeper_checked[data='4'] {
+  color: #ff31a9;
+}

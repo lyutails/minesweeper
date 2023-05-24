@@ -1,5 +1,4 @@
 import { getFirstClick } from "./first_click";
-import { colorNumbers } from "./color_numbers";
 
 export function createCells() {
   let isGame = false;
@@ -24,8 +23,6 @@ export function createCells() {
     isGameOver,
     isWin
   );
-
-  colorNumbers();
 
   return minesweeperField;
 }

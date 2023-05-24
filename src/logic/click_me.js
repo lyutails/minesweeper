@@ -6,6 +6,7 @@ import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
+import { colorNumbers } from "./color_numbers";
 
 export function firstClick(
   minesweeperField,
@@ -124,6 +125,8 @@ export function firstClick(
         )
           total++;
         cellsArray[i].setAttribute("data", total);
+
+        // colorNumbers();
       }
     }
 
@@ -249,6 +252,7 @@ export function firstClick(
         body.insertAdjacentElement("afterbegin", winModal());
       }
     }
+
     appendAudio(cellsArray);
   }
 }
