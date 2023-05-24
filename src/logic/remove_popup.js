@@ -14,6 +14,9 @@ export function removePopup(overlay) {
       if (document.querySelector(".win_modal_body")) {
         document.querySelector(".win_modal_body").remove();
       }
+      if (document.querySelector('.click_modal_body')) {
+        document.querySelector(".click_modal_body").remove();
+      }
     });
   }
   closePopup();

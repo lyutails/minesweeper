@@ -476,7 +476,7 @@ body::-webkit-scrollbar-thumb {
 
   &_danger_text {
     font-size: 1.9rem;
-    color: rgb(10, 70, 10);
+    color: rgb(175, 0, 53);
     position: relative;
     z-index: 10;
     mix-blend-mode: multiply;
@@ -484,6 +484,16 @@ body::-webkit-scrollbar-thumb {
     font-family: "Rubik Burned", cursive;
     text-align: center;
     transform: translateX(5px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+
+    &.active {
+      color: rgb(10, 70, 10);
+    }
 
     &:hover {
       cursor: pointer;
@@ -497,7 +507,7 @@ body::-webkit-scrollbar-thumb {
       mix-blend-mode: color;
       background: rgb(198, 0, 46);
       // background-image: url('./refs/pics/danger_red.jpg');
-      transform: skewX(-20deg) translateX(-110%);
+      transform: skewX(-20deg) translateX(-160%);
       backdrop-filter: blur(2px);
       transition: all 0.4s ease-in-out;
       background-clip: text;
@@ -520,6 +530,15 @@ body::-webkit-scrollbar-thumb {
       color: transparent;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      content: '';
+      background-image: url('./refs/icons/sound/sound-max.svg');
+      width: 40%;
+      aspect-ratio: 1 / 1;
+      display: inline-block;
+      background-size: contain;
     }
   }
 
@@ -1031,6 +1050,27 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+.click_modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  min-width: 320px;
+  max-width: 480px;
+  aspect-ratio: 1 / 0.6;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 175, 132);
+  border-radius: 20px;
+  white-space: pre-line;
+  z-index: 150;
+  user-select: none;
+}
+
 .minesweeper_checked[data='1'] {
   color: #900041;
 }
@@ -1045,4 +1085,20 @@ body::-webkit-scrollbar-thumb {
 
 .minesweeper_checked[data='4'] {
   color: #ff31a9;
+}
+
+.minesweeper_checked[data='5'] {
+  color: #0a9000;
+}
+
+.minesweeper_checked[data='6'] {
+  color: #84009c;
+}
+
+.minesweeper_checked[data='7'] {
+  color: #c2ff19;
+}
+
+.minesweeper_checked[data='8'] {
+  color: #d30f0f;
 }

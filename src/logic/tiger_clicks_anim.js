@@ -7,7 +7,6 @@ export function tigerClicks(minesweeperDangerTiger) {
     "tiger_anim_four",
   ];
   let allPossibleClicks = 1000;
-  // console.log(allCells);
   [...document.querySelectorAll(".minesweeper_cell")].forEach(
     (element, i) => {
       element.addEventListener("click", () => {

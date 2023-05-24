@@ -1,3 +1,5 @@
+import { createFlags } from "../look/flags";
+
 export function applyFlag(flagsPicsArray) {
   document.addEventListener(
     "DOMContentLoaded",
@@ -14,7 +16,6 @@ export function applyFlag(flagsPicsArray) {
         });
       });
       let flagsCount = 9;
-
       const flags = document.querySelector(".minesweeper_flags_holder");
       window.addEventListener("contextmenu", (e) => {
         e.preventDefault();
@@ -34,7 +35,6 @@ export function applyFlag(flagsPicsArray) {
             if (e.target.classList.contains("minesweeper_flagged")) {
               const url = e.currentTarget.getAttribute('data-id');
               const minesweeperSpan = document.createElement('span');
-
               e.currentTarget.style = '';
               e.currentTarget.classList.remove('minesweeper_flagged');
               minesweeperSpan.classList.backgroundImage = `url(${e.currentTarget.getAttribute('data-id')})`;

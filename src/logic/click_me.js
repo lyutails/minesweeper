@@ -6,7 +6,8 @@ import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
-import { colorNumbers } from "./color_numbers";
+import { createFlags } from "../look/flags";
+import { soundOnOff } from "./sound_on_off";
 
 export function firstClick(
   minesweeperField,
@@ -253,6 +254,8 @@ export function firstClick(
       }
     }
 
-    appendAudio(cellsArray);
+    // appendAudio(cellsArray);
+
+  soundOnOff();
   }
 }
