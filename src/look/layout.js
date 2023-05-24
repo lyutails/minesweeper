@@ -75,6 +75,10 @@ export function createLayout() {
   minesweeperDangerSign.append(minesweeperDangerText);
   minesweeperDangerText.textContent = "danger";
 
+  const minesweeperSound = document.createElement('span');
+  minesweeperSound.classList.add('minesweeper_sound');
+  minesweeperDangerSign.append(minesweeperSound);
+
   const minesweeperDangerTiger = document.createElement("span");
   minesweeperDangerTiger.classList.add("minesweeper_danger_tiger");
   minesweeperFooter.append(minesweeperDangerTiger);

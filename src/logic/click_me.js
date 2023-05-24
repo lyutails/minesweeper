@@ -256,6 +256,6 @@ export function firstClick(
 
     // appendAudio(cellsArray);
 
-  soundOnOff();
+  soundOnOff(cellsArray);
   }
 }

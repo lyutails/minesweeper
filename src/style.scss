@@ -470,33 +470,30 @@ body::-webkit-scrollbar-thumb {
     background-position: center center;
     resize: both;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &_danger_text {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     color: rgb(175, 0, 53);
     position: relative;
     z-index: 10;
     mix-blend-mode: multiply;
-    // opacity: 0.8;
     font-family: "Rubik Burned", cursive;
     text-align: center;
     transform: translateX(5px);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     user-select: none;
 
     &.active {
       color: rgb(10, 70, 10);
-    }
-
-    &:hover {
-      cursor: pointer;
     }
 
     &::before {
@@ -506,8 +503,7 @@ body::-webkit-scrollbar-thumb {
       aspect-ratio: 1 / 1;
       mix-blend-mode: color;
       background: rgb(198, 0, 46);
-      // background-image: url('./refs/pics/danger_red.jpg');
-      transform: skewX(-20deg) translateX(-160%);
+      transform: skewX(-20deg) translateX(-120%);
       backdrop-filter: blur(2px);
       transition: all 0.4s ease-in-out;
       background-clip: text;
@@ -531,14 +527,19 @@ body::-webkit-scrollbar-thumb {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+  }
 
-    &::after {
-      content: '';
-      background-image: url('./refs/icons/sound/sound-max.svg');
-      width: 40%;
-      aspect-ratio: 1 / 1;
-      display: inline-block;
-      background-size: contain;
+  &_sound {
+    content: "";
+    background-image: url("./refs/icons/sound/sound-max.svg");
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    background-size: contain;
+    mix-blend-mode: multiply;
+
+    &.active {
+      background-image: url("./refs/icons/sound/sound-mute.svg");
     }
   }
 
@@ -1071,34 +1072,39 @@ body::-webkit-scrollbar-thumb {
   user-select: none;
 }
 
-.minesweeper_checked[data='1'] {
+
+.minesweeper_danger_sign .active > .minesweeper_danger_text {
+  color: rgb(10, 70, 10);
+}
+
+.minesweeper_checked[data="1"] {
   color: #900041;
 }
 
-.minesweeper_checked[data='2'] {
+.minesweeper_checked[data="2"] {
   color: #005485;
 }
 
-.minesweeper_checked[data='3'] {
+.minesweeper_checked[data="3"] {
   color: #ff6219;
 }
 
-.minesweeper_checked[data='4'] {
+.minesweeper_checked[data="4"] {
   color: #ff31a9;
 }
 
-.minesweeper_checked[data='5'] {
+.minesweeper_checked[data="5"] {
   color: #0a9000;
 }
 
-.minesweeper_checked[data='6'] {
+.minesweeper_checked[data="6"] {
   color: #84009c;
 }
 
-.minesweeper_checked[data='7'] {
+.minesweeper_checked[data="7"] {
   color: #c2ff19;
 }
 
-.minesweeper_checked[data='8'] {
+.minesweeper_checked[data="8"] {
   color: #d30f0f;
 }
