@@ -234,7 +234,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 20px;
     background-color: rgba(168, 221, 89, 0.8);
     font-size: 3rem;
-    border-radius: 8px;
+    border-radius: 14px;
 
     &.active {
       background-color: rgba(89, 178, 241, 0.8);
@@ -739,6 +739,11 @@ body::-webkit-scrollbar-thumb {
     &.active {
       background-color: rgba(77, 77, 247, 0.85);
     }
+
+    &.active:hover {
+      cursor: pointer;
+      background-color: rgba(77, 77, 247, 0.75);
+    }
   }
 
   &_load {
@@ -764,6 +769,11 @@ body::-webkit-scrollbar-thumb {
     &.active {
       background-color: rgba(77, 77, 247, 0.85);
     }
+
+    &.active:hover {
+      cursor: pointer;
+      background-color: rgba(77, 77, 247, 0.75);
+    }
   }
 
   &_top {
@@ -788,6 +798,11 @@ body::-webkit-scrollbar-thumb {
 
     &.active {
       background-color: rgba(77, 77, 247, 0.85);
+    }
+
+    &.active:hover {
+      cursor: pointer;
+      background-color: rgba(77, 77, 247, 0.75);
     }
   }
 }
@@ -1167,7 +1182,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .minesweeper_checked[data="1"] {
-  color: #900041;
+  color: #a6004b;
 }
 
 .minesweeper_checked[data="2"] {
