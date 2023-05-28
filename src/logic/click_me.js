@@ -6,7 +6,7 @@ import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
-import { createFlags } from "../look/flags";
+import { applyFlag } from "./apply_flag";
 
 export function firstClick(
   minesweeperField,
@@ -253,5 +253,12 @@ export function firstClick(
       }
     }
     appendAudio();
+
+  // function secondRun(applyFlag) {
+  //   setTimeout(() => {
+  //     applyFlag(flagsPicsArray);
+  //   }, 1000);
+  // }
+  // secondRun(applyFlag);
   }
 }

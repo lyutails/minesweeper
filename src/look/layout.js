@@ -3,8 +3,8 @@ import { createTheme } from "./theme";
 import { createBody } from "./body";
 import { pickSize } from "./size";
 import { createFlags } from "./flags";
-import { tigerClicks } from "../logic/tiger_clicks_anim";
 import { changeButtonsTheme } from "../logic/buttons_theme";
+import { applyFlag } from "../logic/apply_flag";
 
 export function createLayout() {
   const minesweeperWrapper = document.createElement("div");
@@ -84,8 +84,6 @@ export function createLayout() {
   minesweeperDangerTiger.classList.add("minesweeper_danger_tiger");
   minesweeperFooter.append(minesweeperDangerTiger);
 
-  tigerClicks(minesweeperDangerTiger);
-
   minesweeperFooter.append(createTheme());
 
   const minesweeperInstruction = document.createElement("div");
@@ -127,6 +125,8 @@ export function createLayout() {
   minesweeperTop.classList.add('minesweeper_top');
   minesweeperButtons.append(minesweeperTop);
   minesweeperTop.textContent = 'top';
+
+  // applyFlag(flagsPicsArray);
 
   changeButtonsTheme(minesweeperSave, minesweeperLoad, minesweeperTop);
 }

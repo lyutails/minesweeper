@@ -1,9 +1,8 @@
-import { createFlags } from "../look/flags";
-import { applyFlag } from "./apply_flag";
 import { firstClick } from "./click_me";
 import { startTimer } from "./set_time";
 import { clickPopup } from "../look/click_popup";
 import { createOverlay } from "../look/overlay";
+import { tigerClicks } from "./tiger_clicks_anim";
 
 export function getFirstClick(
   minesweeperField,
@@ -34,6 +33,7 @@ export function getFirstClick(
           isGameOver,
           isWin
         );
+        tigerClicks(minesweeperField);
       }
     };
   };

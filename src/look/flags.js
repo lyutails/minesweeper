@@ -8,7 +8,10 @@ export function createFlags() {
   minesweeperFlagsHolder.textContent = "flags";
 
   const firstLaunchFlagsNumber = 10;
-  const flagsPicsArray = shuffleFlags(flagsData).slice(0, firstLaunchFlagsNumber);
+  const flagsPicsArray = shuffleFlags(flagsData).slice(
+    0,
+    firstLaunchFlagsNumber
+  );
 
   for (let i = 0; i < firstLaunchFlagsNumber; i++) {
     const minesweeperFlagPic = document.createElement("span");
@@ -17,7 +20,11 @@ export function createFlags() {
     minesweeperFlagsHolder.append(minesweeperFlagPic);
   }
 
-  applyFlag(flagsPicsArray);
+  // applyFlag(flagsPicsArray);
+
+  // window.onload = () => {
+  // applyFlag(flagsPicsArray);
+  // }
 
   return minesweeperFlagsHolder;
 }
