@@ -261,7 +261,7 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(59, 141, 59);
     border-radius: 8px;
     user-select: none;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
 
     &.active {
       background-color: rgb(60, 116, 201);
@@ -563,7 +563,6 @@ body::-webkit-scrollbar-thumb {
       animation-duration: 0.8s;
       animation-timing-function: linear;
       animation-iteration-count: 1;
-      // animation-play-state: paused;
     }
   }
 
@@ -607,6 +606,9 @@ body::-webkit-scrollbar-thumb {
     10% {
       background-image: url("./refs/pics/small_tiger_tail_tongue.png");
     }
+    50% {
+      background-image: url("./refs/pics/small_tiger.png");
+    }
     90% {
       background-image: url("./refs/pics/small_tiger_tail_tongue.png");
     }
@@ -648,6 +650,12 @@ body::-webkit-scrollbar-thumb {
     }
     100% {
       background-image: url("./refs/pics/small_tiger.png");
+    }
+  }
+
+  &_theme_circle {
+    &.shine {
+      box-shadow: 0 0 5px rgb(255, 255, 70), 0 0 10px yellow;
     }
   }
 

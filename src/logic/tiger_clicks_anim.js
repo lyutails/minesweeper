@@ -35,7 +35,6 @@ export function tigerClicks(minesweeperField) {
                 document.querySelector(
                   ".minesweeper_danger_tiger.on"
                 ).style.animationName = randomTigerAnims[0];
-                console.log(randomTigerAnims[0]);
               }, 50);
             }
           }

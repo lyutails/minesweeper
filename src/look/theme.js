@@ -36,14 +36,20 @@ export function createTheme() {
     themeCircles.push(themeCircle);
   }
 
+  themeCircles[0].classList.add('shine');
+
   themeCircles.forEach((element, i) => {
     element.style.backgroundColor = themeChangerColors[i];
   })
 
   for (let i = 0; i < themeCircles.length; i++) {
-    themeCircles[i].addEventListener("click", () => {
+    themeCircles[i].addEventListener("click", (e) => {
       minesweeperDay.style.backgroundImage = `url(${themeData[i].day})`;
       minesweeperNight.style.backgroundImage = `url(${themeData[i].night})`;
+      themeCircles.forEach(circle => {
+        circle.classList.remove('shine');
+      })
+      e.target.classList.add('shine');
     });
   }
 
