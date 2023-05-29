@@ -1,29 +1,45 @@
 export function tigerClicks(minesweeperField) {
   if (minesweeperField.hasAttribute("clicked")) {
-    let animNames = [
-      "tiger_anim_one",
-      "tiger_anim_two",
-      "tiger_anim_three",
-      "tiger_anim_four",
-    ];
-    let allPossibleClicks = 1000;
     [...document.querySelectorAll(".minesweeper_cell")].forEach(
       (element, i) => {
+        let animNames = [
+          "tiger_anim_one",
+          "tiger_anim_two",
+          "tiger_anim_three",
+          "tiger_anim_four",
+        ];
+        const randomTigerAnims = animNames.sort(() => Math.random() - 0.5);
         element.addEventListener("click", () => {
-          function anim() {
-            document
-              .querySelector(".minesweeper_danger_tiger")
-              .classList.remove("on");
+          function tigerAnim() {
+            if (
+              document
+                .querySelector(".minesweeper_danger_tiger")
+                .classList.contains("on")
+            ) {
+              document
+                .querySelector(".minesweeper_danger_tiger")
+                .classList.remove("on");
+            }
             //   requestAnimationFrame(() => {
             //     document.querySelector('.minesweeper_danger_tiger').classList.add("on");
             //   });
-            setTimeout(() => {
-              document
+            if (
+              !document
                 .querySelector(".minesweeper_danger_tiger")
-                .classList.add("on");
-            }, 50);
+                .classList.contains("on")
+            ) {
+              setTimeout(() => {
+                document
+                  .querySelector(".minesweeper_danger_tiger")
+                  .classList.add("on");
+                document.querySelector(
+                  ".minesweeper_danger_tiger.on"
+                ).style.animationName = randomTigerAnims[0];
+                console.log(randomTigerAnims[0]);
+              }, 50);
+            }
           }
-          anim();
+          tigerAnim();
         });
       }
     );

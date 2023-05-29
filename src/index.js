@@ -1,4 +1,4 @@
 import "./style.scss";
-import { createLayout } from "./look/layout";
+import { createCells } from "./look/layout";
 
-createLayout();
+createCells();

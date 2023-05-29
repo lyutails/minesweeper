@@ -6,9 +6,8 @@ import { appendAudio } from "./audio";
 import { appendLoseAudio } from "./audio_lose";
 import { appendWinAudio } from "./audio_win";
 import { shuffleMines } from "./shuffle_mines";
-import { applyFlag } from "./apply_flag";
 
-export function firstClick(
+export function clickMe(
   minesweeperField,
   minesweeperCellsNumber,
   firstLaunchMinesNumber,
