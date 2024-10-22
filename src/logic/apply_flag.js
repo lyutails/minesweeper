@@ -14,7 +14,7 @@ export function applyFlag(flagsPicsArray) {
       clicksCounter.textContent = `${clicksCount++}`;
     });
   });
-  let flagsCount = 9;
+  let flagsCount = 10;
   const flags = document.querySelector(".minesweeper_flags_holder");
   allCells.forEach((elem, i) => {
     elem.addEventListener("contextmenu", (e) => {

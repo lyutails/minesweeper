@@ -660,6 +660,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   &_instruction {
+    position: absolute;
     font-family: "Shadows Into Light", cursive;
     font-size: 1.8rem;
     text-align: center;
@@ -738,6 +739,9 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.8rem;
     text-align: center;
     transition: all 0.2s ease-in-out;
+    animation-name: circle;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
 
     &:hover {
       cursor: pointer;
@@ -784,7 +788,7 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-  &_top {
+  &_restart {
     width: 20%;
     background-color: rgba(255, 152, 62, 0.85);
     text-align: center;
@@ -798,6 +802,7 @@ body::-webkit-scrollbar-thumb {
     font-family: "Satisfy", cursive;
     font-size: 1.8rem;
     transition: all 0.2s ease-in-out;
+    margin: 0 auto;
 
     &:hover {
       cursor: pointer;

@@ -3,7 +3,6 @@ import { createFlags } from "./flags";
 import { getFirstClick } from "../logic/first_click";
 import { shuffleFlags } from "../logic/shuffle_flags";
 import { createBody } from "./body";
-import { pickSize } from "./size";
 import { changeButtonsTheme } from "../logic/buttons_theme";
 import { createTheme } from "./theme";
 
@@ -88,8 +87,6 @@ export function createCells() {
     minesweeperFooter.classList.add("minesweeper_footer");
     minesweeperWrapper.append(minesweeperFooter);
 
-    minesweeperFooter.append(pickSize());
-
     const minesweeperDangerSign = document.createElement("div");
     minesweeperDangerSign.classList.add("minesweeper_danger_sign");
     minesweeperFooter.append(minesweeperDangerSign);
@@ -108,12 +105,6 @@ export function createCells() {
     minesweeperFooter.append(minesweeperDangerTiger);
 
     minesweeperFooter.append(createTheme());
-
-    const minesweeperInstruction = document.createElement("div");
-    minesweeperInstruction.classList.add("minesweeper_instruction");
-    minesweeperWrapper.append(minesweeperInstruction);
-    minesweeperInstruction.textContent =
-      "place / remove flags with rmb or drag&drop";
 
     const minesweeperCopyright = document.createElement("div");
     minesweeperCopyright.classList.add("minesweeper_copyright");
@@ -135,22 +126,12 @@ export function createCells() {
     minesweeperButtons.classList.add("minesweeper_buttons");
     minesweeperWrapper.append(minesweeperButtons);
 
-    const minesweeperSave = document.createElement("div");
-    minesweeperSave.classList.add("minesweeper_save");
-    minesweeperButtons.append(minesweeperSave);
-    minesweeperSave.textContent = "save";
+    const minesweeperRestart = document.createElement("div");
+    minesweeperRestart.classList.add("minesweeper_restart");
+    minesweeperButtons.append(minesweeperRestart);
+    minesweeperRestart.textContent = "restart";
 
-    const minesweeperLoad = document.createElement("div");
-    minesweeperLoad.classList.add("minesweeper_load");
-    minesweeperButtons.append(minesweeperLoad);
-    minesweeperLoad.textContent = "load";
-
-    const minesweeperTop = document.createElement("div");
-    minesweeperTop.classList.add("minesweeper_top");
-    minesweeperButtons.append(minesweeperTop);
-    minesweeperTop.textContent = "top";
-
-    changeButtonsTheme(minesweeperSave, minesweeperLoad, minesweeperTop);
+    changeButtonsTheme(minesweeperRestart);
   }
 
   createLayout();
