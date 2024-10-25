@@ -121,17 +121,6 @@ export function createCells() {
     minesweeperCopyright.append(minesweeperAuthor);
     minesweeperAuthor.textContent = "2023 @lyutails";
     minesweeperAuthor.setAttribute("href", "https://github.com/lyutails");
-
-    const minesweeperButtons = document.createElement("div");
-    minesweeperButtons.classList.add("minesweeper_buttons");
-    minesweeperWrapper.append(minesweeperButtons);
-
-    const minesweeperRestart = document.createElement("div");
-    minesweeperRestart.classList.add("minesweeper_restart");
-    minesweeperButtons.append(minesweeperRestart);
-    minesweeperRestart.textContent = "restart";
-
-    changeButtonsTheme(minesweeperRestart);
   }
 
   createLayout();
